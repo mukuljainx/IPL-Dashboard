@@ -1,0 +1,2535 @@
+[
+  {
+    "winner": "Rajasthan Royals",
+    "finalMatchID": 0,
+    "highestScoreMatch": {
+      "date": "2008-04-19",
+      "matchId": 2,
+      "seasonId": 2008,
+      "results": "normal",
+      "winner": "Chennai Super Kings",
+      "closenessRun": 33,
+      "closenessWicket": 0,
+      "total4s": 38,
+      "total6s": 25,
+      "team1Score": {
+        "name": "Chennai Super Kings",
+        "value": 240
+      },
+      "team2Score": {
+        "name": "Kings XI Punjab",
+        "value": 207
+      },
+      "max6s4s": {
+        "name": "MEK Hussey",
+        "value": 17,
+        "total4s": 8,
+        "total6s": 9
+      },
+      "maxScore": {
+        "name": "MEK Hussey",
+        "value": 116,
+        "strikeRate": 214.81481481481484
+      },
+      "maxWicket": {
+        "name": "IK Pathan",
+        "value": 2
+      },
+      "maxCatch": {
+        "name": "Joginder Sharma",
+        "value": 2
+      },
+      "playerOfMatch": "MEK Hussey",
+      "averageBatsmanScore": 33.07692307692308,
+      "totalBatsmanPlayed": 13,
+      "totalWicketTaken": 9,
+      "totalBowlerPlayed": 8,
+      "averageWicketTaken": 1.125
+    },
+    "highestScoreBatsman": {
+      "date": "2008-04-18",
+      "matchId": 1,
+      "seasonId": 2008,
+      "results": "normal",
+      "winner": "Kolkata Knight Riders",
+      "closenessRun": 140,
+      "closenessWicket": 0,
+      "total4s": 18,
+      "total6s": 17,
+      "team1Score": {
+        "name": "Kolkata Knight Riders",
+        "value": 222
+      },
+      "team2Score": {
+        "name": "Royal Challengers Bangalore",
+        "value": 82
+      },
+      "max6s4s": {
+        "name": "BB McCullum",
+        "value": 23,
+        "total4s": 10,
+        "total6s": 13
+      },
+      "maxScore": {
+        "name": "BB McCullum",
+        "value": 158,
+        "strikeRate": 216.43835616438358
+      },
+      "maxWicket": {
+        "name": "AB Agarkar",
+        "value": 3
+      },
+      "maxCatch": {
+        "name": "M Kartik",
+        "value": 2
+      },
+      "playerOfMatch": "BB McCullum",
+      "averageBatsmanScore": 16.75,
+      "totalBatsmanPlayed": 16,
+      "totalWicketTaken": 12,
+      "totalBowlerPlayed": 8,
+      "averageWicketTaken": 1.5
+    },
+    "highestCatchesPlayer": {
+      "date": "2008-05-16",
+      "matchId": 40,
+      "seasonId": 2008,
+      "results": "normal",
+      "winner": "Mumbai Indians",
+      "closenessRun": 0,
+      "closenessWicket": 8,
+      "total4s": 15,
+      "total6s": 4,
+      "team1Score": {
+        "name": "Kolkata Knight Riders",
+        "value": 67
+      },
+      "team2Score": {
+        "name": "Mumbai Indians",
+        "value": 68
+      },
+      "max6s4s": {
+        "name": "ST Jayasuriya",
+        "value": 9,
+        "total4s": 6,
+        "total6s": 3
+      },
+      "maxScore": {
+        "name": "ST Jayasuriya",
+        "value": 48,
+        "strikeRate": 300
+      },
+      "maxWicket": {
+        "name": "SM Pollock",
+        "value": 3
+      },
+      "maxCatch": {
+        "name": "SR Tendulkar",
+        "value": 4
+      },
+      "playerOfMatch": "SM Pollock",
+      "averageBatsmanScore": 7.8,
+      "totalBatsmanPlayed": 15,
+      "totalWicketTaken": 11,
+      "totalBowlerPlayed": 6,
+      "averageWicketTaken": 1.8333333333333333
+    },
+    "highestWicketsPlayer": {
+      "date": "2008-05-04",
+      "matchId": 24,
+      "seasonId": 2008,
+      "results": "normal",
+      "winner": "Rajasthan Royals",
+      "closenessRun": 0,
+      "closenessWicket": 8,
+      "total4s": 22,
+      "total6s": 3,
+      "team1Score": {
+        "name": "Chennai Super Kings",
+        "value": 109
+      },
+      "team2Score": {
+        "name": "Rajasthan Royals",
+        "value": 110
+      },
+      "max6s4s": {
+        "name": "JA Morkel",
+        "value": 5,
+        "total4s": 4,
+        "total6s": 1
+      },
+      "maxScore": {
+        "name": "JA Morkel",
+        "value": 42,
+        "strikeRate": 127.27272727272727
+      },
+      "maxWicket": {
+        "name": "Sohail Tanvir",
+        "value": 6
+      },
+      "maxCatch": {
+        "name": "Sohail Tanvir",
+        "value": 2
+      },
+      "playerOfMatch": "Sohail Tanvir",
+      "averageBatsmanScore": 12.733333333333333,
+      "totalBatsmanPlayed": 15,
+      "totalWicketTaken": 12,
+      "totalBowlerPlayed": 6,
+      "averageWicketTaken": 2
+    },
+    "bestClosestMatch": {
+      "date": "2008-06-01",
+      "matchId": 58,
+      "seasonId": 2008,
+      "results": "normal",
+      "winner": "Rajasthan Royals",
+      "closenessRun": 0,
+      "closenessWicket": 3,
+      "total4s": 21,
+      "total6s": 12,
+      "team1Score": {
+        "name": "Chennai Super Kings",
+        "value": 163
+      },
+      "team2Score": {
+        "name": "Rajasthan Royals",
+        "value": 164
+      },
+      "max6s4s": {
+        "name": "YK Pathan",
+        "value": 7,
+        "total4s": 3,
+        "total6s": 4
+      },
+      "maxScore": {
+        "name": "YK Pathan",
+        "value": 56,
+        "strikeRate": 151.35135135135135
+      },
+      "maxWicket": {
+        "name": "YK Pathan",
+        "value": 3
+      },
+      "maxCatch": {
+        "name": "Kamran Akmal",
+        "value": 2
+      },
+      "playerOfMatch": "YK Pathan",
+      "averageBatsmanScore": 19.125,
+      "totalBatsmanPlayed": 16,
+      "totalWicketTaken": 10,
+      "totalBowlerPlayed": 6,
+      "averageWicketTaken": 1.6666666666666667
+    },
+    "averageMatchScore": 154.6293103448276,
+    "averageClosenessScore": 12.155172413793103,
+    "totalMatch": 58,
+    "mostPlayerOfMatch": {
+      "name": "SE Marsh",
+      "value": 5
+    },
+    "averageBatsmanScore": 19.61797011727286,
+    "averageWicketTaken": 1.6524736279046623,
+    "finalMatch": {
+      "date": "2008-06-01",
+      "matchId": 58,
+      "seasonId": 2008,
+      "results": "normal",
+      "winner": "Rajasthan Royals",
+      "closenessRun": 0,
+      "closenessWicket": 3,
+      "total4s": 21,
+      "total6s": 12,
+      "team1Score": {
+        "name": "Chennai Super Kings",
+        "value": 163
+      },
+      "team2Score": {
+        "name": "Rajasthan Royals",
+        "value": 164
+      },
+      "max6s4s": {
+        "name": "YK Pathan",
+        "value": 7,
+        "total4s": 3,
+        "total6s": 4
+      },
+      "maxScore": {
+        "name": "YK Pathan",
+        "value": 56,
+        "strikeRate": 151.35135135135135
+      },
+      "maxWicket": {
+        "name": "YK Pathan",
+        "value": 3
+      },
+      "maxCatch": {
+        "name": "Kamran Akmal",
+        "value": 2
+      },
+      "playerOfMatch": "YK Pathan",
+      "averageBatsmanScore": 19.125,
+      "totalBatsmanPlayed": 16,
+      "totalWicketTaken": 10,
+      "totalBowlerPlayed": 6,
+      "averageWicketTaken": 1.6666666666666667
+    }
+  },
+  {
+    "winner": "Deccan Chargers",
+    "finalMatchID": 0,
+    "highestScoreMatchID": 0,
+    "highestScoreBatsmanID": 0,
+    "highestCatchesPlayerID": 0,
+    "highestWicketsPlayerID": 0,
+    "bestClosestMatchID": 0,
+    "averageMatchScore": 143.44736842105263,
+    "averageClosenessScore": 13.403508771929825,
+    "totalMatch": 57,
+    "mostPlayerOfMatch": {
+      "name": "YK Pathan",
+      "value": 7
+    },
+    "averageBatsmanScore": 18.551756262494415,
+    "averageWicketTaken": 1.6170096959570643,
+    "highestScoreMatch": {
+      "date": "2009-05-05",
+      "matchId": 86,
+      "seasonId": 2009,
+      "results": "normal",
+      "winner": "Rajasthan Royals",
+      "closenessRun": 78,
+      "closenessWicket": 0,
+      "total4s": 36,
+      "total6s": 12,
+      "team1Score": {
+        "name": "Rajasthan Royals",
+        "value": 211
+      },
+      "team2Score": {
+        "name": "Kings XI Punjab",
+        "value": 133
+      },
+      "max6s4s": {
+        "name": "GC Smith",
+        "value": 13,
+        "total4s": 12,
+        "total6s": 1
+      },
+      "maxScore": {
+        "name": "GC Smith",
+        "value": 77,
+        "strikeRate": 183.33333333333331
+      },
+      "maxWicket": {
+        "name": "A Singh",
+        "value": 3
+      },
+      "maxCatch": {
+        "name": "SM Harwood",
+        "value": 2
+      },
+      "playerOfMatch": "GC Smith",
+      "averageBatsmanScore": 20.0625,
+      "totalBatsmanPlayed": 16,
+      "totalWicketTaken": 12,
+      "totalBowlerPlayed": 8,
+      "averageWicketTaken": 1.5
+    },
+    "highestScoreBatsman": {
+      "date": "2009-05-21",
+      "matchId": 112,
+      "seasonId": 2009,
+      "results": "normal",
+      "winner": "Royal Challengers Bangalore",
+      "closenessRun": 12,
+      "closenessWicket": 0,
+      "total4s": 23,
+      "total6s": 12,
+      "team1Score": {
+        "name": "Royal Challengers Bangalore",
+        "value": 170
+      },
+      "team2Score": {
+        "name": "Deccan Chargers",
+        "value": 158
+      },
+      "max6s4s": {
+        "name": "MK Pandey",
+        "value": 14,
+        "total4s": 10,
+        "total6s": 4
+      },
+      "maxScore": {
+        "name": "MK Pandey",
+        "value": 114,
+        "strikeRate": 156.16438356164383
+      },
+      "maxWicket": {
+        "name": "PP Ojha",
+        "value": 2
+      },
+      "maxCatch": {
+        "name": "RE van der Merwe",
+        "value": 2
+      },
+      "playerOfMatch": "MK Pandey",
+      "averageBatsmanScore": 22.357142857142858,
+      "totalBatsmanPlayed": 14,
+      "totalWicketTaken": 9,
+      "totalBowlerPlayed": 6,
+      "averageWicketTaken": 1.5
+    },
+    "highestCatchesPlayer": {
+      "date": "2009-04-29",
+      "matchId": 75,
+      "seasonId": 2009,
+      "results": "normal",
+      "winner": "Royal Challengers Bangalore",
+      "closenessRun": 0,
+      "closenessWicket": 5,
+      "total4s": 24,
+      "total6s": 5,
+      "team1Score": {
+        "name": "Kolkata Knight Riders",
+        "value": 139
+      },
+      "team2Score": {
+        "name": "Royal Challengers Bangalore",
+        "value": 143
+      },
+      "max6s4s": {
+        "name": "CH Gayle",
+        "value": 6,
+        "total4s": 6,
+        "total6s": 0
+      },
+      "maxScore": {
+        "name": "MN van Wyk",
+        "value": 43,
+        "strikeRate": 122.85714285714286
+      },
+      "maxWicket": {
+        "name": "BJ Hodge",
+        "value": 3
+      },
+      "maxCatch": {
+        "name": "MN van Wyk",
+        "value": 4
+      },
+      "playerOfMatch": "MV Boucher",
+      "averageBatsmanScore": 17.6,
+      "totalBatsmanPlayed": 15,
+      "totalWicketTaken": 11,
+      "totalBowlerPlayed": 7,
+      "averageWicketTaken": 1.5714285714285714
+    },
+    "highestWicketsPlayer": {
+      "date": "2009-04-18",
+      "matchId": 60,
+      "seasonId": 2009,
+      "results": "normal",
+      "winner": "Royal Challengers Bangalore",
+      "closenessRun": 75,
+      "closenessWicket": 0,
+      "total4s": 16,
+      "total6s": 4,
+      "team1Score": {
+        "name": "Royal Challengers Bangalore",
+        "value": 133
+      },
+      "team2Score": {
+        "name": "Rajasthan Royals",
+        "value": 58
+      },
+      "max6s4s": {
+        "name": "R Dravid",
+        "value": 9,
+        "total4s": 8,
+        "total6s": 1
+      },
+      "maxScore": {
+        "name": "R Dravid",
+        "value": 66,
+        "strikeRate": 137.5
+      },
+      "maxWicket": {
+        "name": "A Kumble",
+        "value": 5
+      },
+      "maxCatch": {
+        "name": "M Rawat",
+        "value": 2
+      },
+      "playerOfMatch": "R Dravid",
+      "averageBatsmanScore": 8.9,
+      "totalBatsmanPlayed": 20,
+      "totalWicketTaken": 17,
+      "totalBowlerPlayed": 7,
+      "averageWicketTaken": 2.4285714285714284
+    },
+    "bestClosestMatch": {
+      "date": "2009-05-24",
+      "matchId": 115,
+      "seasonId": 2009,
+      "results": "normal",
+      "winner": "Deccan Chargers",
+      "closenessRun": 6,
+      "closenessWicket": 0,
+      "total4s": 19,
+      "total6s": 9,
+      "team1Score": {
+        "name": "Deccan Chargers",
+        "value": 143
+      },
+      "team2Score": {
+        "name": "Royal Challengers Bangalore",
+        "value": 137
+      },
+      "max6s4s": {
+        "name": "A Symonds",
+        "value": 5,
+        "total4s": 4,
+        "total6s": 1
+      },
+      "maxScore": {
+        "name": "HH Gibbs",
+        "value": 53,
+        "strikeRate": 108.16326530612245
+      },
+      "maxWicket": {
+        "name": "A Kumble",
+        "value": 4
+      },
+      "maxCatch": {
+        "name": "MK Pandey",
+        "value": 2
+      },
+      "playerOfMatch": "A Kumble",
+      "averageBatsmanScore": 13.789473684210526,
+      "totalBatsmanPlayed": 19,
+      "totalWicketTaken": 15,
+      "totalBowlerPlayed": 7,
+      "averageWicketTaken": 2.142857142857143
+    },
+    "finalMatch": {
+      "date": "2009-05-24",
+      "matchId": 115,
+      "seasonId": 2009,
+      "results": "normal",
+      "winner": "Deccan Chargers",
+      "closenessRun": 6,
+      "closenessWicket": 0,
+      "total4s": 19,
+      "total6s": 9,
+      "team1Score": {
+        "name": "Deccan Chargers",
+        "value": 143
+      },
+      "team2Score": {
+        "name": "Royal Challengers Bangalore",
+        "value": 137
+      },
+      "max6s4s": {
+        "name": "A Symonds",
+        "value": 5,
+        "total4s": 4,
+        "total6s": 1
+      },
+      "maxScore": {
+        "name": "HH Gibbs",
+        "value": 53,
+        "strikeRate": 108.16326530612245
+      },
+      "maxWicket": {
+        "name": "A Kumble",
+        "value": 4
+      },
+      "maxCatch": {
+        "name": "MK Pandey",
+        "value": 2
+      },
+      "playerOfMatch": "A Kumble",
+      "averageBatsmanScore": 13.789473684210526,
+      "totalBatsmanPlayed": 19,
+      "totalWicketTaken": 15,
+      "totalBowlerPlayed": 7,
+      "averageWicketTaken": 2.142857142857143
+    }
+  },
+  {
+    "winner": "Chennai Super Kings",
+    "finalMatchID": 0,
+    "highestScoreMatchID": 0,
+    "highestScoreBatsmanID": 0,
+    "highestCatchesPlayerID": 0,
+    "highestWicketsPlayerID": 0,
+    "bestClosestMatchID": 0,
+    "averageMatchScore": 157.35833333333332,
+    "averageClosenessScore": 16.266666666666666,
+    "totalMatch": 60,
+    "mostPlayerOfMatch": {
+      "name": "YK Pathan",
+      "value": 9
+    },
+    "averageBatsmanScore": 20.273150050199202,
+    "averageWicketTaken": 1.5235131072631074,
+    "highestScoreMatch": {
+      "date": "2010-04-03",
+      "matchId": 147,
+      "seasonId": 2010,
+      "results": "normal",
+      "winner": "Chennai Super Kings",
+      "closenessRun": 23,
+      "closenessWicket": 0,
+      "total4s": 39,
+      "total6s": 30,
+      "team1Score": {
+        "name": "Chennai Super Kings",
+        "value": 246
+      },
+      "team2Score": {
+        "name": "Rajasthan Royals",
+        "value": 223
+      },
+      "max6s4s": {
+        "name": "M Vijay",
+        "value": 19,
+        "total4s": 8,
+        "total6s": 11
+      },
+      "maxScore": {
+        "name": "M Vijay",
+        "value": 127,
+        "strikeRate": 226.78571428571428
+      },
+      "maxWicket": {
+        "name": "SR Watson",
+        "value": 2
+      },
+      "maxCatch": {
+        "name": "S Anirudha",
+        "value": 2
+      },
+      "playerOfMatch": "M Vijay",
+      "averageBatsmanScore": 34.46153846153846,
+      "totalBatsmanPlayed": 13,
+      "totalWicketTaken": 9,
+      "totalBowlerPlayed": 6,
+      "averageWicketTaken": 1.5
+    },
+    "highestScoreBatsman": {
+      "date": "2010-04-03",
+      "matchId": 147,
+      "seasonId": 2010,
+      "results": "normal",
+      "winner": "Chennai Super Kings",
+      "closenessRun": 23,
+      "closenessWicket": 0,
+      "total4s": 39,
+      "total6s": 30,
+      "team1Score": {
+        "name": "Chennai Super Kings",
+        "value": 246
+      },
+      "team2Score": {
+        "name": "Rajasthan Royals",
+        "value": 223
+      },
+      "max6s4s": {
+        "name": "M Vijay",
+        "value": 19,
+        "total4s": 8,
+        "total6s": 11
+      },
+      "maxScore": {
+        "name": "M Vijay",
+        "value": 127,
+        "strikeRate": 226.78571428571428
+      },
+      "maxWicket": {
+        "name": "SR Watson",
+        "value": 2
+      },
+      "maxCatch": {
+        "name": "S Anirudha",
+        "value": 2
+      },
+      "playerOfMatch": "M Vijay",
+      "averageBatsmanScore": 34.46153846153846,
+      "totalBatsmanPlayed": 13,
+      "totalWicketTaken": 9,
+      "totalBowlerPlayed": 6,
+      "averageWicketTaken": 1.5
+    },
+    "highestCatchesPlayer": {
+      "date": "2010-03-31",
+      "matchId": 144,
+      "seasonId": 2010,
+      "results": "normal",
+      "winner": "Delhi Daredevils",
+      "closenessRun": 67,
+      "closenessWicket": 0,
+      "total4s": 26,
+      "total6s": 12,
+      "team1Score": {
+        "name": "Delhi Daredevils",
+        "value": 188
+      },
+      "team2Score": {
+        "name": "Rajasthan Royals",
+        "value": 121
+      },
+      "max6s4s": {
+        "name": "KD Karthik",
+        "value": 10,
+        "total4s": 6,
+        "total6s": 4
+      },
+      "maxScore": {
+        "name": "KD Karthik",
+        "value": 69,
+        "strikeRate": 186.48648648648648
+      },
+      "maxWicket": {
+        "name": "S Narwal",
+        "value": 3
+      },
+      "maxCatch": {
+        "name": "DA Warner",
+        "value": 4
+      },
+      "playerOfMatch": "KD Karthik",
+      "averageBatsmanScore": 16.27777777777778,
+      "totalBatsmanPlayed": 18,
+      "totalWicketTaken": 13,
+      "totalBowlerPlayed": 8,
+      "averageWicketTaken": 1.625
+    },
+    "highestWicketsPlayer": {
+      "date": "2010-04-24",
+      "matchId": 174,
+      "seasonId": 2010,
+      "results": "normal",
+      "winner": "Royal Challengers Bangalore",
+      "closenessRun": 0,
+      "closenessWicket": 9,
+      "total4s": 17,
+      "total6s": 4,
+      "team1Score": {
+        "name": "Deccan Chargers",
+        "value": 82
+      },
+      "team2Score": {
+        "name": "Royal Challengers Bangalore",
+        "value": 86
+      },
+      "max6s4s": {
+        "name": "Anirudh Singh",
+        "value": 5,
+        "total4s": 4,
+        "total6s": 1
+      },
+      "maxScore": {
+        "name": "Anirudh Singh",
+        "value": 40,
+        "strikeRate": 102.56410256410255
+      },
+      "maxWicket": {
+        "name": "A Kumble",
+        "value": 4
+      },
+      "maxCatch": {
+        "name": "JH Kallis",
+        "value": 2
+      },
+      "playerOfMatch": "A Kumble",
+      "averageBatsmanScore": 12.384615384615385,
+      "totalBatsmanPlayed": 13,
+      "totalWicketTaken": 11,
+      "totalBowlerPlayed": 6,
+      "averageWicketTaken": 1.8333333333333333
+    },
+    "bestClosestMatch": {
+      "date": "2010-04-25",
+      "matchId": 175,
+      "seasonId": 2010,
+      "results": "normal",
+      "winner": "Chennai Super Kings",
+      "closenessRun": 22,
+      "closenessWicket": 0,
+      "total4s": 23,
+      "total6s": 13,
+      "team1Score": {
+        "name": "Chennai Super Kings",
+        "value": 168
+      },
+      "team2Score": {
+        "name": "Mumbai Indians",
+        "value": 146
+      },
+      "max6s4s": {
+        "name": "SR Tendulkar",
+        "value": 7,
+        "total4s": 7,
+        "total6s": 0
+      },
+      "maxScore": {
+        "name": "SK Raina",
+        "value": 57,
+        "strikeRate": 162.85714285714286
+      },
+      "maxWicket": {
+        "name": "CRD Fernando",
+        "value": 2
+      },
+      "maxCatch": {
+        "name": "SS Tiwary",
+        "value": 1
+      },
+      "playerOfMatch": "SK Raina",
+      "averageBatsmanScore": 16.166666666666668,
+      "totalBatsmanPlayed": 18,
+      "totalWicketTaken": 10,
+      "totalBowlerPlayed": 8,
+      "averageWicketTaken": 1.25
+    },
+    "finalMatch": {
+      "date": "2010-04-25",
+      "matchId": 175,
+      "seasonId": 2010,
+      "results": "normal",
+      "winner": "Chennai Super Kings",
+      "closenessRun": 22,
+      "closenessWicket": 0,
+      "total4s": 23,
+      "total6s": 13,
+      "team1Score": {
+        "name": "Chennai Super Kings",
+        "value": 168
+      },
+      "team2Score": {
+        "name": "Mumbai Indians",
+        "value": 146
+      },
+      "max6s4s": {
+        "name": "SR Tendulkar",
+        "value": 7,
+        "total4s": 7,
+        "total6s": 0
+      },
+      "maxScore": {
+        "name": "SK Raina",
+        "value": 57,
+        "strikeRate": 162.85714285714286
+      },
+      "maxWicket": {
+        "name": "CRD Fernando",
+        "value": 2
+      },
+      "maxCatch": {
+        "name": "SS Tiwary",
+        "value": 1
+      },
+      "playerOfMatch": "SK Raina",
+      "averageBatsmanScore": 16.166666666666668,
+      "totalBatsmanPlayed": 18,
+      "totalWicketTaken": 10,
+      "totalBowlerPlayed": 8,
+      "averageWicketTaken": 1.25
+    }
+  },
+  {
+    "winner": "Chennai Super Kings",
+    "finalMatchID": 0,
+    "highestScoreMatchID": 0,
+    "highestScoreBatsmanID": 0,
+    "highestCatchesPlayerID": 0,
+    "highestWicketsPlayerID": 0,
+    "bestClosestMatchID": 0,
+    "averageMatchScore": 144.8904109589041,
+    "averageClosenessScore": 15.04109589041096,
+    "totalMatch": 73,
+    "mostPlayerOfMatch": {
+      "name": "YK Pathan",
+      "value": 11
+    },
+    "averageBatsmanScore": 19.77664727673051,
+    "averageWicketTaken": 1.5915633833442049,
+    "highestScoreMatch": {
+      "date": "2011-05-17",
+      "matchId": 237,
+      "seasonId": 2011,
+      "results": "normal",
+      "winner": "Kings XI Punjab",
+      "closenessRun": 111,
+      "closenessWicket": 0,
+      "total4s": 29,
+      "total6s": 19,
+      "team1Score": {
+        "name": "Kings XI Punjab",
+        "value": 232
+      },
+      "team2Score": {
+        "name": "Royal Challengers Bangalore",
+        "value": 121
+      },
+      "max6s4s": {
+        "name": "AC Gilchrist",
+        "value": 17,
+        "total4s": 8,
+        "total6s": 9
+      },
+      "maxScore": {
+        "name": "AC Gilchrist",
+        "value": 106,
+        "strikeRate": 203.84615384615384
+      },
+      "maxWicket": {
+        "name": "PP Chawla",
+        "value": 4
+      },
+      "maxCatch": {
+        "name": "DJ Hussey",
+        "value": 3
+      },
+      "playerOfMatch": "AC Gilchrist",
+      "averageBatsmanScore": 21.133333333333333,
+      "totalBatsmanPlayed": 15,
+      "totalWicketTaken": 12,
+      "totalBowlerPlayed": 5,
+      "averageWicketTaken": 2.4
+    },
+    "highestScoreBatsman": {
+      "date": "2011-04-13",
+      "matchId": 184,
+      "seasonId": 2011,
+      "results": "normal",
+      "winner": "Kings XI Punjab",
+      "closenessRun": 0,
+      "closenessWicket": 6,
+      "total4s": 43,
+      "total6s": 10,
+      "team1Score": {
+        "name": "Chennai Super Kings",
+        "value": 188
+      },
+      "team2Score": {
+        "name": "Kings XI Punjab",
+        "value": 193
+      },
+      "max6s4s": {
+        "name": "PC Valthaty",
+        "value": 21,
+        "total4s": 19,
+        "total6s": 2
+      },
+      "maxScore": {
+        "name": "PC Valthaty",
+        "value": 120,
+        "strikeRate": 190.47619047619045
+      },
+      "maxWicket": {
+        "name": "P Kumar",
+        "value": 2
+      },
+      "maxCatch": {
+        "name": "PC Valthaty",
+        "value": 1
+      },
+      "playerOfMatch": "PC Valthaty",
+      "averageBatsmanScore": 34.09090909090909,
+      "totalBatsmanPlayed": 11,
+      "totalWicketTaken": 7,
+      "totalBowlerPlayed": 6,
+      "averageWicketTaken": 1.1666666666666667
+    },
+    "highestCatchesPlayer": {
+      "date": "2011-04-14",
+      "matchId": 186,
+      "seasonId": 2011,
+      "results": "normal",
+      "winner": "Deccan Chargers",
+      "closenessRun": 33,
+      "closenessWicket": 0,
+      "total4s": 29,
+      "total6s": 9,
+      "team1Score": {
+        "name": "Deccan Chargers",
+        "value": 175
+      },
+      "team2Score": {
+        "name": "Royal Challengers Bangalore",
+        "value": 142
+      },
+      "max6s4s": {
+        "name": "B Chipli",
+        "value": 8,
+        "total4s": 5,
+        "total6s": 3
+      },
+      "maxScore": {
+        "name": "V Kohli",
+        "value": 71,
+        "strikeRate": 142
+      },
+      "maxWicket": {
+        "name": "Z Khan",
+        "value": 3
+      },
+      "maxCatch": {
+        "name": "KC Sangakkara",
+        "value": 5
+      },
+      "playerOfMatch": "DW Steyn",
+      "averageBatsmanScore": 17.764705882352942,
+      "totalBatsmanPlayed": 17,
+      "totalWicketTaken": 14,
+      "totalBowlerPlayed": 8,
+      "averageWicketTaken": 1.75
+    },
+    "highestWicketsPlayer": {
+      "date": "2011-05-10",
+      "matchId": 228,
+      "seasonId": 2011,
+      "results": "normal",
+      "winner": "Kings XI Punjab",
+      "closenessRun": 76,
+      "closenessWicket": 0,
+      "total4s": 25,
+      "total6s": 5,
+      "team1Score": {
+        "name": "Kings XI Punjab",
+        "value": 163
+      },
+      "team2Score": {
+        "name": "Mumbai Indians",
+        "value": 87
+      },
+      "max6s4s": {
+        "name": "SE Marsh",
+        "value": 5,
+        "total4s": 5,
+        "total6s": 0
+      },
+      "maxScore": {
+        "name": "SE Marsh",
+        "value": 43,
+        "strikeRate": 126.47058823529412
+      },
+      "maxWicket": {
+        "name": "MM Patel",
+        "value": 5
+      },
+      "maxCatch": {
+        "name": "AC Blizzard",
+        "value": 3
+      },
+      "playerOfMatch": "BA Bhatt",
+      "averageBatsmanScore": 11.15,
+      "totalBatsmanPlayed": 20,
+      "totalWicketTaken": 16,
+      "totalBowlerPlayed": 7,
+      "averageWicketTaken": 2.2857142857142856
+    },
+    "bestClosestMatch": {
+      "date": "2011-05-28",
+      "matchId": 248,
+      "seasonId": 2011,
+      "results": "normal",
+      "winner": "Chennai Super Kings",
+      "closenessRun": 58,
+      "closenessWicket": 0,
+      "total4s": 18,
+      "total6s": 17,
+      "team1Score": {
+        "name": "Chennai Super Kings",
+        "value": 205
+      },
+      "team2Score": {
+        "name": "Royal Challengers Bangalore",
+        "value": 147
+      },
+      "max6s4s": {
+        "name": "M Vijay",
+        "value": 10,
+        "total4s": 4,
+        "total6s": 6
+      },
+      "maxScore": {
+        "name": "M Vijay",
+        "value": 95,
+        "strikeRate": 182.69230769230768
+      },
+      "maxWicket": {
+        "name": "R Ashwin",
+        "value": 3
+      },
+      "maxCatch": {
+        "name": "V Kohli",
+        "value": 2
+      },
+      "playerOfMatch": "M Vijay",
+      "averageBatsmanScore": 21.0625,
+      "totalBatsmanPlayed": 16,
+      "totalWicketTaken": 13,
+      "totalBowlerPlayed": 8,
+      "averageWicketTaken": 1.625
+    },
+    "finalMatch": {
+      "date": "2011-05-28",
+      "matchId": 248,
+      "seasonId": 2011,
+      "results": "normal",
+      "winner": "Chennai Super Kings",
+      "closenessRun": 58,
+      "closenessWicket": 0,
+      "total4s": 18,
+      "total6s": 17,
+      "team1Score": {
+        "name": "Chennai Super Kings",
+        "value": 205
+      },
+      "team2Score": {
+        "name": "Royal Challengers Bangalore",
+        "value": 147
+      },
+      "max6s4s": {
+        "name": "M Vijay",
+        "value": 10,
+        "total4s": 4,
+        "total6s": 6
+      },
+      "maxScore": {
+        "name": "M Vijay",
+        "value": 95,
+        "strikeRate": 182.69230769230768
+      },
+      "maxWicket": {
+        "name": "R Ashwin",
+        "value": 3
+      },
+      "maxCatch": {
+        "name": "V Kohli",
+        "value": 2
+      },
+      "playerOfMatch": "M Vijay",
+      "averageBatsmanScore": 21.0625,
+      "totalBatsmanPlayed": 16,
+      "totalWicketTaken": 13,
+      "totalBowlerPlayed": 8,
+      "averageWicketTaken": 1.625
+    }
+  },
+  {
+    "winner": "Kolkata Knight Riders",
+    "finalMatchID": 0,
+    "highestScoreMatchID": 0,
+    "highestScoreBatsmanID": 0,
+    "highestCatchesPlayerID": 0,
+    "highestWicketsPlayerID": 0,
+    "bestClosestMatchID": 0,
+    "averageMatchScore": 151.70945945945945,
+    "averageClosenessScore": 12.972972972972974,
+    "totalMatch": 74,
+    "mostPlayerOfMatch": {
+      "name": "CH Gayle",
+      "value": 12
+    },
+    "averageBatsmanScore": 20.31891232222115,
+    "averageWicketTaken": 1.607185757185757,
+    "highestScoreMatch": {
+      "date": "2012-05-25",
+      "matchId": 321,
+      "seasonId": 2012,
+      "results": "normal",
+      "winner": "Chennai Super Kings",
+      "closenessRun": 86,
+      "closenessWicket": 0,
+      "total4s": 31,
+      "total6s": 16,
+      "team1Score": {
+        "name": "Chennai Super Kings",
+        "value": 222
+      },
+      "team2Score": {
+        "name": "Delhi Daredevils",
+        "value": 136
+      },
+      "max6s4s": {
+        "name": "M Vijay",
+        "value": 19,
+        "total4s": 15,
+        "total6s": 4
+      },
+      "maxScore": {
+        "name": "M Vijay",
+        "value": 113,
+        "strikeRate": 194.82758620689654
+      },
+      "maxWicket": {
+        "name": "R Ashwin",
+        "value": 3
+      },
+      "maxCatch": {
+        "name": "NV Ojha",
+        "value": 2
+      },
+      "playerOfMatch": "M Vijay",
+      "averageBatsmanScore": 20.058823529411764,
+      "totalBatsmanPlayed": 17,
+      "totalWicketTaken": 12,
+      "totalBowlerPlayed": 8,
+      "averageWicketTaken": 1.5
+    },
+    "highestScoreBatsman": {
+      "date": "2012-05-17",
+      "matchId": 313,
+      "seasonId": 2012,
+      "results": "normal",
+      "winner": "Royal Challengers Bangalore",
+      "closenessRun": 21,
+      "closenessWicket": 0,
+      "total4s": 36,
+      "total6s": 22,
+      "team1Score": {
+        "name": "Royal Challengers Bangalore",
+        "value": 215
+      },
+      "team2Score": {
+        "name": "Delhi Daredevils",
+        "value": 194
+      },
+      "max6s4s": {
+        "name": "CH Gayle",
+        "value": 20,
+        "total4s": 7,
+        "total6s": 13
+      },
+      "maxScore": {
+        "name": "CH Gayle",
+        "value": 128,
+        "strikeRate": 209.8360655737705
+      },
+      "maxWicket": {
+        "name": "Z Khan",
+        "value": 3
+      },
+      "maxCatch": {
+        "name": "HV Patel",
+        "value": 2
+      },
+      "playerOfMatch": "CH Gayle",
+      "averageBatsmanScore": 30.615384615384617,
+      "totalBatsmanPlayed": 13,
+      "totalWicketTaken": 10,
+      "totalBowlerPlayed": 5,
+      "averageWicketTaken": 2
+    },
+    "highestCatchesPlayer": {
+      "date": "2012-05-17",
+      "matchId": 312,
+      "seasonId": 2012,
+      "results": "normal",
+      "winner": "Kings XI Punjab",
+      "closenessRun": 0,
+      "closenessWicket": 6,
+      "total4s": 27,
+      "total6s": 8,
+      "team1Score": {
+        "name": "Chennai Super Kings",
+        "value": 120
+      },
+      "team2Score": {
+        "name": "Kings XI Punjab",
+        "value": 123
+      },
+      "max6s4s": {
+        "name": "AC Gilchrist",
+        "value": 11,
+        "total4s": 9,
+        "total6s": 2
+      },
+      "maxScore": {
+        "name": "AC Gilchrist",
+        "value": 64,
+        "strikeRate": 139.1304347826087
+      },
+      "maxWicket": {
+        "name": "P Kumar",
+        "value": 2
+      },
+      "maxCatch": {
+        "name": "AC Gilchrist",
+        "value": 4
+      },
+      "playerOfMatch": "AC Gilchrist",
+      "averageBatsmanScore": 15.6,
+      "totalBatsmanPlayed": 15,
+      "totalWicketTaken": 11,
+      "totalBowlerPlayed": 7,
+      "averageWicketTaken": 1.5714285714285714
+    },
+    "highestWicketsPlayer": {
+      "date": "2012-04-15",
+      "matchId": 266,
+      "seasonId": 2012,
+      "results": "normal",
+      "winner": "Kings XI Punjab",
+      "closenessRun": 2,
+      "closenessWicket": 0,
+      "total4s": 17,
+      "total6s": 7,
+      "team1Score": {
+        "name": "Kings XI Punjab",
+        "value": 134
+      },
+      "team2Score": {
+        "name": "Kolkata Knight Riders",
+        "value": 132
+      },
+      "max6s4s": {
+        "name": "Mandeep Singh",
+        "value": 4,
+        "total4s": 3,
+        "total6s": 1
+      },
+      "maxScore": {
+        "name": "Mandeep Singh",
+        "value": 38,
+        "strikeRate": 111.76470588235294
+      },
+      "maxWicket": {
+        "name": "SP Narine",
+        "value": 5
+      },
+      "maxCatch": {
+        "name": "MS Bisla",
+        "value": 3
+      },
+      "playerOfMatch": "SP Narine",
+      "averageBatsmanScore": 12.5,
+      "totalBatsmanPlayed": 20,
+      "totalWicketTaken": 15,
+      "totalBowlerPlayed": 7,
+      "averageWicketTaken": 2.142857142857143
+    },
+    "bestClosestMatch": {
+      "date": "2012-05-27",
+      "matchId": 322,
+      "seasonId": 2012,
+      "results": "normal",
+      "winner": "Kolkata Knight Riders",
+      "closenessRun": 0,
+      "closenessWicket": 5,
+      "total4s": 31,
+      "total6s": 14,
+      "team1Score": {
+        "name": "Chennai Super Kings",
+        "value": 190
+      },
+      "team2Score": {
+        "name": "Kolkata Knight Riders",
+        "value": 192
+      },
+      "max6s4s": {
+        "name": "MS Bisla",
+        "value": 13,
+        "total4s": 8,
+        "total6s": 5
+      },
+      "maxScore": {
+        "name": "MS Bisla",
+        "value": 89,
+        "strikeRate": 185.41666666666669
+      },
+      "maxWicket": {
+        "name": "BW Hilfenhaus",
+        "value": 2
+      },
+      "maxCatch": {
+        "name": "S Badrinath",
+        "value": 2
+      },
+      "playerOfMatch": "MS Bisla",
+      "averageBatsmanScore": 33.36363636363637,
+      "totalBatsmanPlayed": 11,
+      "totalWicketTaken": 8,
+      "totalBowlerPlayed": 7,
+      "averageWicketTaken": 1.1428571428571428
+    },
+    "finalMatch": {
+      "date": "2012-05-27",
+      "matchId": 322,
+      "seasonId": 2012,
+      "results": "normal",
+      "winner": "Kolkata Knight Riders",
+      "closenessRun": 0,
+      "closenessWicket": 5,
+      "total4s": 31,
+      "total6s": 14,
+      "team1Score": {
+        "name": "Chennai Super Kings",
+        "value": 190
+      },
+      "team2Score": {
+        "name": "Kolkata Knight Riders",
+        "value": 192
+      },
+      "max6s4s": {
+        "name": "MS Bisla",
+        "value": 13,
+        "total4s": 8,
+        "total6s": 5
+      },
+      "maxScore": {
+        "name": "MS Bisla",
+        "value": 89,
+        "strikeRate": 185.41666666666669
+      },
+      "maxWicket": {
+        "name": "BW Hilfenhaus",
+        "value": 2
+      },
+      "maxCatch": {
+        "name": "S Badrinath",
+        "value": 2
+      },
+      "playerOfMatch": "MS Bisla",
+      "averageBatsmanScore": 33.36363636363637,
+      "totalBatsmanPlayed": 11,
+      "totalWicketTaken": 8,
+      "totalBowlerPlayed": 7,
+      "averageWicketTaken": 1.1428571428571428
+    }
+  },
+  {
+    "winner": "Mumbai Indians",
+    "finalMatchID": 0,
+    "highestScoreMatchID": 0,
+    "highestScoreBatsmanID": 0,
+    "highestCatchesPlayerID": 0,
+    "highestWicketsPlayerID": 0,
+    "bestClosestMatchID": 0,
+    "averageMatchScore": 148.69736842105263,
+    "averageClosenessScore": 16.32894736842105,
+    "totalMatch": 76,
+    "mostPlayerOfMatch": {
+      "name": "CH Gayle",
+      "value": 15
+    },
+    "averageBatsmanScore": 19.450820391056364,
+    "averageWicketTaken": 1.5704858737753473,
+    "highestScoreMatch": {
+      "date": "2013-04-23",
+      "matchId": 352,
+      "seasonId": 2013,
+      "results": "normal",
+      "winner": "Royal Challengers Bangalore",
+      "closenessRun": 130,
+      "closenessWicket": 0,
+      "total4s": 36,
+      "total6s": 24,
+      "team1Score": {
+        "name": "Royal Challengers Bangalore",
+        "value": 263
+      },
+      "team2Score": {
+        "name": "Pune Warriors",
+        "value": 133
+      },
+      "max6s4s": {
+        "name": "CH Gayle",
+        "value": 30,
+        "total4s": 13,
+        "total6s": 17
+      },
+      "maxScore": {
+        "name": "CH Gayle",
+        "value": 175,
+        "strikeRate": 269.2307692307692
+      },
+      "maxWicket": {
+        "name": "AB Dinda",
+        "value": 2
+      },
+      "maxCatch": {
+        "name": "MR Marsh",
+        "value": 2
+      },
+      "playerOfMatch": "CH Gayle",
+      "averageBatsmanScore": 22.41176470588235,
+      "totalBatsmanPlayed": 17,
+      "totalWicketTaken": 13,
+      "totalBowlerPlayed": 9,
+      "averageWicketTaken": 1.4444444444444444
+    },
+    "highestScoreBatsman": {
+      "date": "2013-04-23",
+      "matchId": 352,
+      "seasonId": 2013,
+      "results": "normal",
+      "winner": "Royal Challengers Bangalore",
+      "closenessRun": 130,
+      "closenessWicket": 0,
+      "total4s": 36,
+      "total6s": 24,
+      "team1Score": {
+        "name": "Royal Challengers Bangalore",
+        "value": 263
+      },
+      "team2Score": {
+        "name": "Pune Warriors",
+        "value": 133
+      },
+      "max6s4s": {
+        "name": "CH Gayle",
+        "value": 30,
+        "total4s": 13,
+        "total6s": 17
+      },
+      "maxScore": {
+        "name": "CH Gayle",
+        "value": 175,
+        "strikeRate": 269.2307692307692
+      },
+      "maxWicket": {
+        "name": "AB Dinda",
+        "value": 2
+      },
+      "maxCatch": {
+        "name": "MR Marsh",
+        "value": 2
+      },
+      "playerOfMatch": "CH Gayle",
+      "averageBatsmanScore": 22.41176470588235,
+      "totalBatsmanPlayed": 17,
+      "totalWicketTaken": 13,
+      "totalBowlerPlayed": 9,
+      "averageWicketTaken": 1.4444444444444444
+    },
+    "highestCatchesPlayer": {
+      "date": "2013-05-19",
+      "matchId": 392,
+      "seasonId": 2013,
+      "results": "normal",
+      "winner": "Pune Warriors",
+      "closenessRun": 38,
+      "closenessWicket": 0,
+      "total4s": 26,
+      "total6s": 10,
+      "team1Score": {
+        "name": "Pune Warriors",
+        "value": 172
+      },
+      "team2Score": {
+        "name": "Delhi Daredevils",
+        "value": 134
+      },
+      "max6s4s": {
+        "name": "LJ Wright",
+        "value": 8,
+        "total4s": 7,
+        "total6s": 1
+      },
+      "maxScore": {
+        "name": "AJ Finch",
+        "value": 52,
+        "strikeRate": 152.94117647058823
+      },
+      "maxWicket": {
+        "name": "AG Murtaza",
+        "value": 3
+      },
+      "maxCatch": {
+        "name": "V Sehwag",
+        "value": 3
+      },
+      "playerOfMatch": "LJ Wright",
+      "averageBatsmanScore": 16.764705882352942,
+      "totalBatsmanPlayed": 17,
+      "totalWicketTaken": 14,
+      "totalBowlerPlayed": 8,
+      "averageWicketTaken": 1.75
+    },
+    "highestWicketsPlayer": {
+      "date": "2013-05-17",
+      "matchId": 390,
+      "seasonId": 2013,
+      "results": "normal",
+      "winner": "Sunrisers Hyderabad",
+      "closenessRun": 23,
+      "closenessWicket": 0,
+      "total4s": 14,
+      "total6s": 6,
+      "team1Score": {
+        "name": "Sunrisers Hyderabad",
+        "value": 136
+      },
+      "team2Score": {
+        "name": "Rajasthan Royals",
+        "value": 113
+      },
+      "max6s4s": {
+        "name": "BB Samantray",
+        "value": 7,
+        "total4s": 6,
+        "total6s": 1
+      },
+      "maxScore": {
+        "name": "BB Samantray",
+        "value": 55,
+        "strikeRate": 119.56521739130434
+      },
+      "maxWicket": {
+        "name": "JP Faulkner",
+        "value": 5
+      },
+      "maxCatch": {
+        "name": "AM Rahane",
+        "value": 1
+      },
+      "playerOfMatch": "A Mishra",
+      "averageBatsmanScore": 11.4,
+      "totalBatsmanPlayed": 20,
+      "totalWicketTaken": 15,
+      "totalBowlerPlayed": 7,
+      "averageWicketTaken": 2.142857142857143
+    },
+    "bestClosestMatch": {
+      "date": "2013-05-26",
+      "matchId": 398,
+      "seasonId": 2013,
+      "results": "normal",
+      "winner": "Mumbai Indians",
+      "closenessRun": 23,
+      "closenessWicket": 0,
+      "total4s": 26,
+      "total6s": 9,
+      "team1Score": {
+        "name": "Mumbai Indians",
+        "value": 148
+      },
+      "team2Score": {
+        "name": "Chennai Super Kings",
+        "value": 125
+      },
+      "max6s4s": {
+        "name": "KA Pollard",
+        "value": 10,
+        "total4s": 7,
+        "total6s": 3
+      },
+      "maxScore": {
+        "name": "MS Dhoni",
+        "value": 63,
+        "strikeRate": 140
+      },
+      "maxWicket": {
+        "name": "DJ Bravo",
+        "value": 4
+      },
+      "maxCatch": {
+        "name": "MS Dhoni",
+        "value": 2
+      },
+      "playerOfMatch": "KA Pollard",
+      "averageBatsmanScore": 11.772727272727273,
+      "totalBatsmanPlayed": 22,
+      "totalWicketTaken": 17,
+      "totalBowlerPlayed": 10,
+      "averageWicketTaken": 1.7
+    },
+    "finalMatch": {
+      "date": "2013-05-26",
+      "matchId": 398,
+      "seasonId": 2013,
+      "results": "normal",
+      "winner": "Mumbai Indians",
+      "closenessRun": 23,
+      "closenessWicket": 0,
+      "total4s": 26,
+      "total6s": 9,
+      "team1Score": {
+        "name": "Mumbai Indians",
+        "value": 148
+      },
+      "team2Score": {
+        "name": "Chennai Super Kings",
+        "value": 125
+      },
+      "max6s4s": {
+        "name": "KA Pollard",
+        "value": 10,
+        "total4s": 7,
+        "total6s": 3
+      },
+      "maxScore": {
+        "name": "MS Dhoni",
+        "value": 63,
+        "strikeRate": 140
+      },
+      "maxWicket": {
+        "name": "DJ Bravo",
+        "value": 4
+      },
+      "maxCatch": {
+        "name": "MS Dhoni",
+        "value": 2
+      },
+      "playerOfMatch": "KA Pollard",
+      "averageBatsmanScore": 11.772727272727273,
+      "totalBatsmanPlayed": 22,
+      "totalWicketTaken": 17,
+      "totalBowlerPlayed": 10,
+      "averageWicketTaken": 1.7
+    }
+  },
+  {
+    "winner": "Kolkata Knight Riders",
+    "finalMatchID": 0,
+    "highestScoreMatchID": 0,
+    "highestScoreBatsmanID": 0,
+    "highestCatchesPlayerID": 0,
+    "highestWicketsPlayerID": 0,
+    "bestClosestMatchID": 0,
+    "averageMatchScore": 157.75833333333333,
+    "averageClosenessScore": 10.733333333333333,
+    "totalMatch": 60,
+    "mostPlayerOfMatch": {
+      "name": "YK Pathan",
+      "value": 14
+    },
+    "averageBatsmanScore": 21.531373102803055,
+    "averageWicketTaken": 1.5581944444444444,
+    "highestScoreMatch": {
+      "date": "2014-05-07",
+      "matchId": 427,
+      "seasonId": 2014,
+      "results": "normal",
+      "winner": "Kings XI Punjab",
+      "closenessRun": 44,
+      "closenessWicket": 0,
+      "total4s": 43,
+      "total6s": 17,
+      "team1Score": {
+        "name": "Kings XI Punjab",
+        "value": 231
+      },
+      "team2Score": {
+        "name": "Chennai Super Kings",
+        "value": 187
+      },
+      "max6s4s": {
+        "name": "GJ Maxwell",
+        "value": 14,
+        "total4s": 6,
+        "total6s": 8
+      },
+      "maxScore": {
+        "name": "GJ Maxwell",
+        "value": 90,
+        "strikeRate": 236.84210526315786
+      },
+      "maxWicket": {
+        "name": "MM Sharma",
+        "value": 2
+      },
+      "maxCatch": {
+        "name": "IC Pandey",
+        "value": 1
+      },
+      "playerOfMatch": "GJ Maxwell",
+      "averageBatsmanScore": 28.857142857142858,
+      "totalBatsmanPlayed": 14,
+      "totalWicketTaken": 9,
+      "totalBowlerPlayed": 7,
+      "averageWicketTaken": 1.2857142857142858
+    },
+    "highestScoreBatsman": {
+      "date": "2014-05-30",
+      "matchId": 457,
+      "seasonId": 2014,
+      "results": "normal",
+      "winner": "Kings XI Punjab",
+      "closenessRun": 24,
+      "closenessWicket": 0,
+      "total4s": 36,
+      "total6s": 23,
+      "team1Score": {
+        "name": "Kings XI Punjab",
+        "value": 226
+      },
+      "team2Score": {
+        "name": "Chennai Super Kings",
+        "value": 202
+      },
+      "max6s4s": {
+        "name": "V Sehwag",
+        "value": 20,
+        "total4s": 12,
+        "total6s": 8
+      },
+      "maxScore": {
+        "name": "V Sehwag",
+        "value": 122,
+        "strikeRate": 217.85714285714283
+      },
+      "maxWicket": {
+        "name": "A Nehra",
+        "value": 2
+      },
+      "maxCatch": {
+        "name": "SK Raina",
+        "value": 2
+      },
+      "playerOfMatch": "V Sehwag",
+      "averageBatsmanScore": 25.0625,
+      "totalBatsmanPlayed": 16,
+      "totalWicketTaken": 10,
+      "totalBowlerPlayed": 8,
+      "averageWicketTaken": 1.25
+    },
+    "highestCatchesPlayer": {
+      "date": "2014-05-27",
+      "matchId": 455,
+      "seasonId": 2014,
+      "results": "normal",
+      "winner": "Kolkata Knight Riders",
+      "closenessRun": 28,
+      "closenessWicket": 0,
+      "total4s": 21,
+      "total6s": 15,
+      "team1Score": {
+        "name": "Kolkata Knight Riders",
+        "value": 163
+      },
+      "team2Score": {
+        "name": "Kings XI Punjab",
+        "value": 135
+      },
+      "max6s4s": {
+        "name": "RV Uthappa",
+        "value": 6,
+        "total4s": 4,
+        "total6s": 2
+      },
+      "maxScore": {
+        "name": "RV Uthappa",
+        "value": 42,
+        "strikeRate": 140
+      },
+      "maxWicket": {
+        "name": "Karanveer Singh",
+        "value": 3
+      },
+      "maxCatch": {
+        "name": "DA Miller",
+        "value": 3
+      },
+      "playerOfMatch": "UT Yadav",
+      "averageBatsmanScore": 15.88888888888889,
+      "totalBatsmanPlayed": 18,
+      "totalWicketTaken": 14,
+      "totalBowlerPlayed": 7,
+      "averageWicketTaken": 2
+    },
+    "highestWicketsPlayer": {
+      "date": "2014-06-01",
+      "matchId": 458,
+      "seasonId": 2014,
+      "results": "normal",
+      "winner": "Kolkata Knight Riders",
+      "closenessRun": 0,
+      "closenessWicket": 3,
+      "total4s": 32,
+      "total6s": 21,
+      "team1Score": {
+        "name": "Kings XI Punjab",
+        "value": 199
+      },
+      "team2Score": {
+        "name": "Kolkata Knight Riders",
+        "value": 200
+      },
+      "max6s4s": {
+        "name": "WP Saha",
+        "value": 18,
+        "total4s": 10,
+        "total6s": 8
+      },
+      "maxScore": {
+        "name": "WP Saha",
+        "value": 115,
+        "strikeRate": 209.0909090909091
+      },
+      "maxWicket": {
+        "name": "Karanveer Singh",
+        "value": 4
+      },
+      "maxCatch": {
+        "name": "DA Miller",
+        "value": 2
+      },
+      "playerOfMatch": "MK Pandey",
+      "averageBatsmanScore": 25.666666666666668,
+      "totalBatsmanPlayed": 15,
+      "totalWicketTaken": 10,
+      "totalBowlerPlayed": 5,
+      "averageWicketTaken": 2
+    },
+    "bestClosestMatch": {
+      "date": "2014-06-01",
+      "matchId": 458,
+      "seasonId": 2014,
+      "results": "normal",
+      "winner": "Kolkata Knight Riders",
+      "closenessRun": 0,
+      "closenessWicket": 3,
+      "total4s": 32,
+      "total6s": 21,
+      "team1Score": {
+        "name": "Kings XI Punjab",
+        "value": 199
+      },
+      "team2Score": {
+        "name": "Kolkata Knight Riders",
+        "value": 200
+      },
+      "max6s4s": {
+        "name": "WP Saha",
+        "value": 18,
+        "total4s": 10,
+        "total6s": 8
+      },
+      "maxScore": {
+        "name": "WP Saha",
+        "value": 115,
+        "strikeRate": 209.0909090909091
+      },
+      "maxWicket": {
+        "name": "Karanveer Singh",
+        "value": 4
+      },
+      "maxCatch": {
+        "name": "DA Miller",
+        "value": 2
+      },
+      "playerOfMatch": "MK Pandey",
+      "averageBatsmanScore": 25.666666666666668,
+      "totalBatsmanPlayed": 15,
+      "totalWicketTaken": 10,
+      "totalBowlerPlayed": 5,
+      "averageWicketTaken": 2
+    },
+    "finalMatch": {
+      "date": "2014-06-01",
+      "matchId": 458,
+      "seasonId": 2014,
+      "results": "normal",
+      "winner": "Kolkata Knight Riders",
+      "closenessRun": 0,
+      "closenessWicket": 3,
+      "total4s": 32,
+      "total6s": 21,
+      "team1Score": {
+        "name": "Kings XI Punjab",
+        "value": 199
+      },
+      "team2Score": {
+        "name": "Kolkata Knight Riders",
+        "value": 200
+      },
+      "max6s4s": {
+        "name": "WP Saha",
+        "value": 18,
+        "total4s": 10,
+        "total6s": 8
+      },
+      "maxScore": {
+        "name": "WP Saha",
+        "value": 115,
+        "strikeRate": 209.0909090909091
+      },
+      "maxWicket": {
+        "name": "Karanveer Singh",
+        "value": 4
+      },
+      "maxCatch": {
+        "name": "DA Miller",
+        "value": 2
+      },
+      "playerOfMatch": "MK Pandey",
+      "averageBatsmanScore": 25.666666666666668,
+      "totalBatsmanPlayed": 15,
+      "totalWicketTaken": 10,
+      "totalBowlerPlayed": 5,
+      "averageWicketTaken": 2
+    }
+  },
+  {
+    "winner": "Mumbai Indians",
+    "finalMatchID": 0,
+    "highestScoreMatchID": 0,
+    "highestScoreBatsmanID": 0,
+    "highestCatchesPlayerID": 0,
+    "highestWicketsPlayerID": 0,
+    "bestClosestMatchID": 0,
+    "averageMatchScore": 155.53389830508473,
+    "averageClosenessScore": 14.40677966101695,
+    "totalMatch": 59,
+    "mostPlayerOfMatch": {
+      "name": "CH Gayle",
+      "value": 17
+    },
+    "averageBatsmanScore": 20.345963653183432,
+    "averageWicketTaken": 1.5718859295130478,
+    "highestScoreMatch": {
+      "date": "2015-05-10",
+      "matchId": 503,
+      "seasonId": 2015,
+      "results": "normal",
+      "winner": "Royal Challengers Bangalore",
+      "closenessRun": 39,
+      "closenessWicket": 0,
+      "total4s": 41,
+      "total6s": 20,
+      "team1Score": {
+        "name": "Royal Challengers Bangalore",
+        "value": 235
+      },
+      "team2Score": {
+        "name": "Mumbai Indians",
+        "value": 196
+      },
+      "max6s4s": {
+        "name": "AB de Villiers",
+        "value": 23,
+        "total4s": 19,
+        "total6s": 4
+      },
+      "maxScore": {
+        "name": "AB de Villiers",
+        "value": 133,
+        "strikeRate": 229.31034482758622
+      },
+      "maxWicket": {
+        "name": "HV Patel",
+        "value": 2
+      },
+      "maxCatch": {
+        "name": "LMP Simmons",
+        "value": 1
+      },
+      "playerOfMatch": "AB de Villiers",
+      "averageBatsmanScore": 35,
+      "totalBatsmanPlayed": 12,
+      "totalWicketTaken": 7,
+      "totalBowlerPlayed": 5,
+      "averageWicketTaken": 1.4
+    },
+    "highestScoreBatsman": {
+      "date": "2015-05-10",
+      "matchId": 503,
+      "seasonId": 2015,
+      "results": "normal",
+      "winner": "Royal Challengers Bangalore",
+      "closenessRun": 39,
+      "closenessWicket": 0,
+      "total4s": 41,
+      "total6s": 20,
+      "team1Score": {
+        "name": "Royal Challengers Bangalore",
+        "value": 235
+      },
+      "team2Score": {
+        "name": "Mumbai Indians",
+        "value": 196
+      },
+      "max6s4s": {
+        "name": "AB de Villiers",
+        "value": 23,
+        "total4s": 19,
+        "total6s": 4
+      },
+      "maxScore": {
+        "name": "AB de Villiers",
+        "value": 133,
+        "strikeRate": 229.31034482758622
+      },
+      "maxWicket": {
+        "name": "HV Patel",
+        "value": 2
+      },
+      "maxCatch": {
+        "name": "LMP Simmons",
+        "value": 1
+      },
+      "playerOfMatch": "AB de Villiers",
+      "averageBatsmanScore": 35,
+      "totalBatsmanPlayed": 12,
+      "totalWicketTaken": 7,
+      "totalBowlerPlayed": 5,
+      "averageWicketTaken": 1.4
+    },
+    "highestCatchesPlayer": {
+      "date": "2015-05-20",
+      "matchId": 515,
+      "seasonId": 2015,
+      "results": "normal",
+      "winner": "Royal Challengers Bangalore",
+      "closenessRun": 71,
+      "closenessWicket": 0,
+      "total4s": 26,
+      "total6s": 8,
+      "team1Score": {
+        "name": "Royal Challengers Bangalore",
+        "value": 180
+      },
+      "team2Score": {
+        "name": "Rajasthan Royals",
+        "value": 109
+      },
+      "max6s4s": {
+        "name": "Mandeep Singh",
+        "value": 9,
+        "total4s": 7,
+        "total6s": 2
+      },
+      "maxScore": {
+        "name": "AB de Villiers",
+        "value": 66,
+        "strikeRate": 173.6842105263158
+      },
+      "maxWicket": {
+        "name": "DS Kulkarni",
+        "value": 2
+      },
+      "maxCatch": {
+        "name": "KD Karthik",
+        "value": 3
+      },
+      "playerOfMatch": "AB de Villiers",
+      "averageBatsmanScore": 16.11764705882353,
+      "totalBatsmanPlayed": 17,
+      "totalWicketTaken": 12,
+      "totalBowlerPlayed": 7,
+      "averageWicketTaken": 1.7142857142857142
+    },
+    "highestWicketsPlayer": {
+      "date": "2015-05-16",
+      "matchId": 511,
+      "seasonId": 2015,
+      "results": "normal",
+      "winner": "Rajasthan Royals",
+      "closenessRun": 9,
+      "closenessWicket": 0,
+      "total4s": 41,
+      "total6s": 11,
+      "team1Score": {
+        "name": "Rajasthan Royals",
+        "value": 199
+      },
+      "team2Score": {
+        "name": "Kolkata Knight Riders",
+        "value": 190
+      },
+      "max6s4s": {
+        "name": "SR Watson",
+        "value": 14,
+        "total4s": 9,
+        "total6s": 5
+      },
+      "maxScore": {
+        "name": "SR Watson",
+        "value": 104,
+        "strikeRate": 179.31034482758622
+      },
+      "maxWicket": {
+        "name": "CH Morris",
+        "value": 4
+      },
+      "maxCatch": {
+        "name": "DS Kulkarni",
+        "value": 2
+      },
+      "playerOfMatch": "SR Watson",
+      "averageBatsmanScore": 19.61111111111111,
+      "totalBatsmanPlayed": 18,
+      "totalWicketTaken": 13,
+      "totalBowlerPlayed": 6,
+      "averageWicketTaken": 2.1666666666666665
+    },
+    "bestClosestMatch": {
+      "date": "2015-05-24",
+      "matchId": 517,
+      "seasonId": 2015,
+      "results": "normal",
+      "winner": "Mumbai Indians",
+      "closenessRun": 41,
+      "closenessWicket": 0,
+      "total4s": 32,
+      "total6s": 18,
+      "team1Score": {
+        "name": "Mumbai Indians",
+        "value": 202
+      },
+      "team2Score": {
+        "name": "Chennai Super Kings",
+        "value": 161
+      },
+      "max6s4s": {
+        "name": "LMP Simmons",
+        "value": 11,
+        "total4s": 8,
+        "total6s": 3
+      },
+      "maxScore": {
+        "name": "LMP Simmons",
+        "value": 68,
+        "strikeRate": 158.13953488372093
+      },
+      "maxWicket": {
+        "name": "MJ McClenaghan",
+        "value": 3
+      },
+      "maxCatch": {
+        "name": "SK Raina",
+        "value": 2
+      },
+      "playerOfMatch": "RG Sharma",
+      "averageBatsmanScore": 20.58823529411765,
+      "totalBatsmanPlayed": 17,
+      "totalWicketTaken": 12,
+      "totalBowlerPlayed": 7,
+      "averageWicketTaken": 1.7142857142857142
+    },
+    "finalMatch": {
+      "date": "2015-05-24",
+      "matchId": 517,
+      "seasonId": 2015,
+      "results": "normal",
+      "winner": "Mumbai Indians",
+      "closenessRun": 41,
+      "closenessWicket": 0,
+      "total4s": 32,
+      "total6s": 18,
+      "team1Score": {
+        "name": "Mumbai Indians",
+        "value": 202
+      },
+      "team2Score": {
+        "name": "Chennai Super Kings",
+        "value": 161
+      },
+      "max6s4s": {
+        "name": "LMP Simmons",
+        "value": 11,
+        "total4s": 8,
+        "total6s": 3
+      },
+      "maxScore": {
+        "name": "LMP Simmons",
+        "value": 68,
+        "strikeRate": 158.13953488372093
+      },
+      "maxWicket": {
+        "name": "MJ McClenaghan",
+        "value": 3
+      },
+      "maxCatch": {
+        "name": "SK Raina",
+        "value": 2
+      },
+      "playerOfMatch": "RG Sharma",
+      "averageBatsmanScore": 20.58823529411765,
+      "totalBatsmanPlayed": 17,
+      "totalWicketTaken": 12,
+      "totalBowlerPlayed": 7,
+      "averageWicketTaken": 1.7142857142857142
+    }
+  },
+  {
+    "winner": "Sunrisers Hyderabad",
+    "finalMatchID": 0,
+    "highestScoreMatchID": 0,
+    "highestScoreBatsmanID": 0,
+    "highestCatchesPlayerID": 0,
+    "highestWicketsPlayerID": 0,
+    "bestClosestMatchID": 0,
+    "averageMatchScore": 157.18333333333334,
+    "averageClosenessScore": 11.266666666666667,
+    "totalMatch": 60,
+    "mostPlayerOfMatch": {
+      "name": "YK Pathan",
+      "value": 16
+    },
+    "averageBatsmanScore": 27.430112960225184,
+    "averageWicketTaken": 1.6012962962962967,
+    "highestScoreMatch": {
+      "date": "2016-05-14",
+      "matchId": 561,
+      "seasonId": 2016,
+      "results": "normal",
+      "winner": "Royal Challengers Bangalore",
+      "closenessRun": 144,
+      "closenessWicket": 0,
+      "total4s": 26,
+      "total6s": 22,
+      "team1Score": {
+        "name": "Royal Challengers Bangalore",
+        "value": 248
+      },
+      "team2Score": {
+        "name": "Gujarat Lions",
+        "value": 104
+      },
+      "max6s4s": {
+        "name": "AB de Villiers",
+        "value": 22,
+        "total4s": 10,
+        "total6s": 12
+      },
+      "maxScore": {
+        "name": "AB de Villiers",
+        "value": 129,
+        "strikeRate": 258
+      },
+      "maxWicket": {
+        "name": "CJ Jordan",
+        "value": 4
+      },
+      "maxCatch": {
+        "name": "AB de Villiers",
+        "value": 2
+      },
+      "playerOfMatch": "AB de Villiers",
+      "averageBatsmanScore": 22.4,
+      "totalBatsmanPlayed": 15,
+      "totalWicketTaken": 13,
+      "totalBowlerPlayed": 6,
+      "averageWicketTaken": 2.1666666666666665
+    },
+    "highestScoreBatsman": {
+      "date": "2016-05-14",
+      "matchId": 561,
+      "seasonId": 2016,
+      "results": "normal",
+      "winner": "Royal Challengers Bangalore",
+      "closenessRun": 144,
+      "closenessWicket": 0,
+      "total4s": 26,
+      "total6s": 22,
+      "team1Score": {
+        "name": "Royal Challengers Bangalore",
+        "value": 248
+      },
+      "team2Score": {
+        "name": "Gujarat Lions",
+        "value": 104
+      },
+      "max6s4s": {
+        "name": "AB de Villiers",
+        "value": 22,
+        "total4s": 10,
+        "total6s": 12
+      },
+      "maxScore": {
+        "name": "AB de Villiers",
+        "value": 129,
+        "strikeRate": 258
+      },
+      "maxWicket": {
+        "name": "CJ Jordan",
+        "value": 4
+      },
+      "maxCatch": {
+        "name": "AB de Villiers",
+        "value": 2
+      },
+      "playerOfMatch": "AB de Villiers",
+      "averageBatsmanScore": 22.4,
+      "totalBatsmanPlayed": 15,
+      "totalWicketTaken": 13,
+      "totalBowlerPlayed": 6,
+      "averageWicketTaken": 2.1666666666666665
+    },
+    "highestCatchesPlayer": {
+      "date": "2016-05-08",
+      "matchId": 554,
+      "seasonId": 2016,
+      "results": "normal",
+      "winner": "Sunrisers Hyderabad",
+      "closenessRun": 85,
+      "closenessWicket": 0,
+      "total4s": 30,
+      "total6s": 5,
+      "team1Score": {
+        "name": "Sunrisers Hyderabad",
+        "value": 177
+      },
+      "team2Score": {
+        "name": "Mumbai Indians",
+        "value": 92
+      },
+      "max6s4s": {
+        "name": "S Dhawan",
+        "value": 11,
+        "total4s": 10,
+        "total6s": 1
+      },
+      "maxScore": {
+        "name": "S Dhawan",
+        "value": 82,
+        "strikeRate": 143.859649122807
+      },
+      "maxWicket": {
+        "name": "A Nehra",
+        "value": 3
+      },
+      "maxCatch": {
+        "name": "NV Ojha",
+        "value": 4
+      },
+      "playerOfMatch": "A Nehra",
+      "averageBatsmanScore": 16.125,
+      "totalBatsmanPlayed": 16,
+      "totalWicketTaken": 13,
+      "totalBowlerPlayed": 7,
+      "averageWicketTaken": 1.8571428571428572
+    },
+    "highestWicketsPlayer": {
+      "date": "2016-05-10",
+      "matchId": 557,
+      "seasonId": 2016,
+      "results": "normal",
+      "winner": "Sunrisers Hyderabad",
+      "closenessRun": 4,
+      "closenessWicket": 0,
+      "total4s": 18,
+      "total6s": 11,
+      "team1Score": {
+        "name": "Sunrisers Hyderabad",
+        "value": 137
+      },
+      "team2Score": {
+        "name": "Rising Pune Supergiants",
+        "value": 133
+      },
+      "max6s4s": {
+        "name": "S Dhawan",
+        "value": 4,
+        "total4s": 2,
+        "total6s": 2
+      },
+      "maxScore": {
+        "name": "GJ Bailey",
+        "value": 34,
+        "strikeRate": 85
+      },
+      "maxWicket": {
+        "name": "A Zampa",
+        "value": 6
+      },
+      "maxCatch": {
+        "name": "SS Tiwary",
+        "value": 3
+      },
+      "playerOfMatch": "A Zampa",
+      "averageBatsmanScore": 15.411764705882353,
+      "totalBatsmanPlayed": 17,
+      "totalWicketTaken": 14,
+      "totalBowlerPlayed": 7,
+      "averageWicketTaken": 2
+    },
+    "bestClosestMatch": {
+      "date": "2016-05-29",
+      "matchId": 577,
+      "seasonId": 2016,
+      "results": "normal",
+      "winner": "Sunrisers Hyderabad",
+      "closenessRun": 8,
+      "closenessWicket": 0,
+      "total4s": 32,
+      "total6s": 23,
+      "team1Score": {
+        "name": "Sunrisers Hyderabad",
+        "value": 208
+      },
+      "team2Score": {
+        "name": "Royal Challengers Bangalore",
+        "value": 200
+      },
+      "max6s4s": {
+        "name": "CH Gayle",
+        "value": 12,
+        "total4s": 4,
+        "total6s": 8
+      },
+      "maxScore": {
+        "name": "CH Gayle",
+        "value": 76,
+        "strikeRate": 0
+      },
+      "maxWicket": {
+        "name": "CJ Jordan",
+        "value": 3
+      },
+      "maxCatch": {
+        "name": "YS Chahal",
+        "value": 2
+      },
+      "playerOfMatch": "BCJ Cutting",
+      "averageBatsmanScore": 385,
+      "totalBatsmanPlayed": 18,
+      "totalWicketTaken": 11,
+      "totalBowlerPlayed": 7,
+      "averageWicketTaken": 0
+    },
+    "finalMatch": {
+      "date": "2016-05-29",
+      "matchId": 577,
+      "seasonId": 2016,
+      "results": "normal",
+      "winner": "Sunrisers Hyderabad",
+      "closenessRun": 8,
+      "closenessWicket": 0,
+      "total4s": 32,
+      "total6s": 23,
+      "team1Score": {
+        "name": "Sunrisers Hyderabad",
+        "value": 208
+      },
+      "team2Score": {
+        "name": "Royal Challengers Bangalore",
+        "value": 200
+      },
+      "max6s4s": {
+        "name": "CH Gayle",
+        "value": 12,
+        "total4s": 4,
+        "total6s": 8
+      },
+      "maxScore": {
+        "name": "CH Gayle",
+        "value": 76,
+        "strikeRate": 0
+      },
+      "maxWicket": {
+        "name": "CJ Jordan",
+        "value": 3
+      },
+      "maxCatch": {
+        "name": "YS Chahal",
+        "value": 2
+      },
+      "playerOfMatch": "BCJ Cutting",
+      "averageBatsmanScore": 385,
+      "totalBatsmanPlayed": 18,
+      "totalWicketTaken": 11,
+      "totalBowlerPlayed": 7,
+      "averageWicketTaken": 0
+    }
+  }
+]

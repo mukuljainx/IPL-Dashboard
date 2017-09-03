@@ -1,0 +1,26 @@
+//this is the main file will only contain imports
+
+//framework
+@import "foundation";
+
+//fonts
+@import "fonts";
+
+//app settings
+@import "settings";
+
+//Global
+@import "global";
+
+
+
+//components
+@import "component/header";
+@import "component/footer";
+@import "component/menu";
+@import "component/nav";
+@import "component/home";
+@import "component/graph-option";
+
+//Pages
+
