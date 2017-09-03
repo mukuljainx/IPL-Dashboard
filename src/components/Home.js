@@ -24,36 +24,48 @@ class Home extends React.Component {
     };
 
     this.getGraphLine = this.getGraphLine.bind(this);
-    this.updategraph = this.updategraph.bind(this);
     this.onGraphOptionClick = this.onGraphOptionClick.bind(this);
   }
 
-  getGraphLine(keys,colors){
+  getGraphLine(keys,colors,options){
     return keys.map(function (key,i) {
+      const color = colors[options[i]];
       return (
-        <Line key={i} type="monotone" dataKey={key} stroke={colors[i]} />
+        <Line key={i} type="monotone" dataKey={key} stroke={color} />
       );
     });
   }
 
-  updategraph(options){
-    this.setState({
-      options
-    });
-  }
-
   onGraphOptionClick(option){
-    console.log(option)
+    this.setState((prevState) => {
+      let options = prevState.options;
+      const index = options.indexOf(option);
+      if(index === -1){
+        options.push(option);
+        console.log(options);
+        return{
+          options
+        };
+      }else{
+        options.splice(index,1);
+        console.log(options);
+        return{
+          options
+        };
+      }
+    });
+
   }
 
 
 
   render() {
     const options = this.state.options;
-    let data = helper.seasonData(seasons,options);
-    let graphKeys = ["average6s","average4s"];
+    const seasonData = helper.seasonData(seasons,options);
+    let data = seasonData.data;
+    let graphKeys = seasonData.graphKeys;
 
-    const graphLines = this.getGraphLine(graphKeys,graphColors);
+    const graphLines = this.getGraphLine(graphKeys,graphColors,options);
     return (
       <section className="home-wrapper">
         <div className="row">
@@ -74,7 +86,6 @@ class Home extends React.Component {
                   <YAxis/>
                   <CartesianGrid strokeDasharray="5 0" stroke="#393840"/>
                   <Tooltip wrapperStyle={{background: "black", "border": "none"}}/>
-                  {/*<Legend verticalAlign="top" iconSize={20} height={40}  content={<CustomLegend props={{names :["Team 1", "Team 2"],colors :["#82ca9d","#8884d8"]}} />} />*/}
                   {graphLines}
                 </LineChart>
 
@@ -84,7 +95,7 @@ class Home extends React.Component {
 
 
           <div className="columns medium-4">
-            <GraphOption onClickHandler={this.onGraphOptionClick} colors={graphColors} />
+            <GraphOption onClickHandler={this.onGraphOptionClick} colors={graphColors} options={this.state.options} />
           </div>
         </div>
       </section>

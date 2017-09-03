@@ -244,22 +244,27 @@ let singleSeason = {
   winner : "",
   finalMatchId :0,
   highestScoreMatch : {
+    name : "",
     value : 0,
     matchId : 0,
   },
   highestScoreBatsman : {
+    name : "",
     value: 0,
     matchId : 0,
   },
   highestCatchesPlayer : {
+    name : "",
     value: 0,
     matchId : 0,
   },
   highestWicketsPlayer : {
+    name : "",
     value: 0,
     matchId : 0,
   },
   bestClosestMatch : {
+    name : "",
     value: 0,
     matchId : 0,
   },
@@ -316,11 +321,13 @@ for(let i=0; i< match.length; i++){
       highestScoreMatch.value = Math.max(match[i].team1Score.value, match[i].team2Score.value);
       singleSeason.highestScoreMatch.matchId = match[i].matchId;
       singleSeason.highestScoreMatch.value = highestScoreMatch.value;
+      singleSeason.highestScoreMatch.name = match[i].winner;
     }else if(Math.max(match[i].team1Score.value, match[i].team2Score.value) === highestScoreMatch.value && match[i].closenessRun > highestScoreMatch.closenessRun){
       highestScoreMatch.closenessRun = match[i].closenessRun;
       highestScoreMatch.value = Math.max(match[i].team1Score.value, match[i].team2Score.value);
       singleSeason.highestScoreMatch.matchId = match[i].matchId;
       singleSeason.highestScoreMatch.value = highestScoreMatch.value;
+      singleSeason.highestScoreMatch.name = match[i].winner;
     }
 
     // batsman
@@ -329,12 +336,14 @@ for(let i=0; i< match.length; i++){
       highestScoreBatsman.strikeRate = match[i].maxScore.strikeRate;
       singleSeason.highestScoreBatsman.matchId = match[i].matchId;
       singleSeason.highestScoreBatsman.value = highestScoreBatsman.value;
+      singleSeason.highestScoreBatsman.name = match[i].maxScore.name;
     }
     else if(match[i].maxScore.value > highestScoreBatsman.value){
       highestScoreBatsman.value = match[i].maxScore.value;
       highestScoreBatsman.strikeRate = match[i].maxScore.strikeRate;
       singleSeason.highestScoreBatsman.matchId = match[i].matchId;
       singleSeason.highestScoreBatsman.value = highestScoreBatsman.value;
+      singleSeason.highestScoreBatsman.name = match[i].maxScore.name;
     }
 
     //catcher
@@ -342,12 +351,14 @@ for(let i=0; i< match.length; i++){
       highestCatchesPlayer = match[i].maxCatch.value;
       singleSeason.highestCatchesPlayer.matchId = match[i].matchId;
       singleSeason.highestCatchesPlayer.value = highestCatchesPlayer;
+      singleSeason.highestCatchesPlayer.name = match[i].maxCatch.name;
     }
     //wickets
     if(match[i].maxWicket.value >= highestWicketsPlayer) {
       highestWicketsPlayer = match[i].maxWicket.value;
       singleSeason.highestWicketsPlayer.matchId = match[i].matchId;
       singleSeason.highestWicketsPlayer.value = highestWicketsPlayer;
+      singleSeason.highestWicketsPlayer.name = match[i].maxWicket.name;
     }
 
     //best closest match
@@ -356,11 +367,13 @@ for(let i=0; i< match.length; i++){
       bestClosestMatch.value = Math.max(match[i].team1Score.value, match[i].team2Score.value);
       singleSeason.bestClosestMatch.matchId = match[i].matchId;
       singleSeason.bestClosestMatch.value = bestClosestMatch.closenessRun;
+      singleSeason.bestClosestMatch.name = match[i].team1Score.name + " VS " + match[i].team2Score;
     }else if(match[i].closenessRun === bestClosestMatch.value && Math.max(match[i].team1Score.value, match[i].team2Score.value) > bestClosestMatch.value){
       bestClosestMatch.closenessRun = match[i].closenessRun;
       bestClosestMatch.value = Math.max(match[i].team1Score.value, match[i].team2Score.value);
       singleSeason.bestClosestMatch.matchId = match[i].matchId;
       singleSeason.bestClosestMatch.value = bestClosestMatch.closenessRun;
+      singleSeason.bestClosestMatch.name = match[i].team1Score.name + " VS " + match[i].team2Score;
     }
 
     singleSeason.averageClosenessScore =  match[i].closenessRun !== 0 ? singleSeason.averageClosenessScore + match[i].closenessRun : singleSeason.averageClosenessScore;
@@ -387,22 +400,27 @@ for(let i=0; i< match.length; i++){
       winner : "",
       finalMatchId :0,
       highestScoreMatch : {
+        name : "",
         value : 0,
         matchId : 0,
       },
       highestScoreBatsman : {
+        name : "",
         value: 0,
         matchId : 0,
       },
       highestCatchesPlayer : {
+        name : "",
         value: 0,
         matchId : 0,
       },
       highestWicketsPlayer : {
+        name : "",
         value: 0,
         matchId : 0,
       },
       bestClosestMatch : {
+        name : "",
         value: 0,
         matchId : 0,
       },
