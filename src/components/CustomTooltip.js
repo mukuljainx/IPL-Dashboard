@@ -38,7 +38,7 @@ const CustomTooltip = ({ payload, label, data, options, optionsNames, dataType, 
           <span><b>Year:</b> {label}</span>
           }
           <br />
-          <span><b>Winner:</b> {
+          <span><b>Season Winner:</b> {
             data[(label - base)] !== undefined
             &&
             data[(label - base)]["winner"]

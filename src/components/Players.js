@@ -1,7 +1,6 @@
 import  React from 'react';
 import {LineChart, Line ,XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer} from 'recharts';
 
-import CustomLegend from './CustomLegend';
 import GraphOption from './GraphOption';
 import CustomTooltip from './CustomTooltip';
 import CustomDot from './CustomDot';
@@ -9,16 +8,15 @@ import CustomDot from './CustomDot';
 import * as helper from '../helper/dataCreator';
 
 
-import seasons from "../data/seasons.json";
+import deliveries from "../data/deliveries.json";
 
 
 
 const graphColors = ["#82ca9d", "#3FAEFF", "#8884d8", "#FF7C14","#FFFF40", "#FF0000","#FF00FF", "#FFFFFF"];
 const optionsNames = ["Average 6s", "Average 4s", "Average Team Score", "Most Man of the Match", "Highest Team Score", "Highest Batsman Score", "Highest Wicket Taken (1 Match)", "Highest Catches (1 Match)"];
-// const optionsNames = ["Average Team Score","Highest Team Score", "Highest Batsman Score"];
 
 
-class Random extends React.Component {
+class Players extends React.Component {
 
   constructor(props) {
     super(props);
@@ -71,10 +69,15 @@ class Random extends React.Component {
 
 
   render() {
-    const options = this.state.options;
-    const seasonData = helper.seasonData(seasons,options);
-    let data = seasonData.data;
-    let graphKeys = seasonData.graphKeys;
+    const options = 0;
+    const players = ["BB McCullum","V Kohli","CH Gayle"];
+    const data= helper.seasonData(deliveries,players,options);
+    let graphKeys = [];
+
+    for(let i=0; i<players.length; i++){
+      graphKeys.push(players[i] + "[value]");
+    }
+
 
 
     const graphLines = this.getGraphLine(graphKeys,graphColors,options);
@@ -115,4 +118,4 @@ class Random extends React.Component {
   }
 }
 
-export default Random;
+export default Players;

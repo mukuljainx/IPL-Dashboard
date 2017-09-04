@@ -2,6 +2,8 @@ export function seasonData(seasons,options) {
 
   const allKeys = ["average6s","average4s","averageMatchScore","mostPlayerOfMatch[value]",
                    "highestTeamScore[value]", "highestBatsmanScore[value]", "HighestWicket[value]", "HighestCatches[value]"];
+  // const allKeys = ["averageMatchScore",
+  //   "highestTeamScore[value]", "highestBatsmanScore[value]"];
 
   let data = [];
   let graphKeys = [];
@@ -63,3 +65,68 @@ export function seasonData(seasons,options) {
 
   return {data, graphKeys};
 }
+
+
+export function playerData(deliveries,players,option) {
+  let data = [];
+
+  switch(option){
+    case 0:{ //total run per season
+      data = playersTotalScore(deliveries,players);
+      break;
+    }
+
+    case 1:{ //average strike rate per season
+      data = playersTotalScore(deliveries,players,option);
+      break;
+    }
+  }
+
+  return data;
+}
+
+
+function playersTotalScore(deliveries,players,option) {
+  let data = [];
+  let seasonId = seasonByMatchid(0);
+  let temp = {label:seasonId};
+
+  for(let i=0; i<players.length; i++){
+    temp[players[i]] = {name : players[i], value : 0};
+  }
+
+  for(let i=0; i< deliveries.length; i++){
+    if(seasonId === seasonByMatchid(deliveries[i].match_id)){
+      if(temp[deliveries[i].batsman] !== undefined){
+        temp[deliveries[i].batsman].value += parseInt(deliveries[i].batsman_runs);
+      }
+    }else{
+      seasonId = seasonByMatchid(i);
+      i--;
+      data.push(temp);
+      temp = {label:seasonId};
+      for(let i=0; i<players.length; i++){
+        temp[players[i]] = {name : players[i], value : 0};
+      }
+    }
+  }
+  data.push(temp);
+  return data;
+}
+
+function seasonByMatchid(matchId) {
+  const id = parseInt(matchId);
+
+  if(id <= 58 ) return 2008;
+  if(id <= 115 ) return 2009;
+  if(id <= 175 ) return 2010;
+  if(id <= 248 ) return 2011;
+  if(id <= 322 ) return 2012;
+  if(id <= 398 ) return 2013;
+  if(id <= 458 ) return 2014;
+  if(id <= 517 ) return 2015;
+  if(id <= 577 ) return 2016;
+
+}
+
+

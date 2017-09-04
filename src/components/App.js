@@ -9,6 +9,7 @@ import Home from './Home';
 import Random from './Random';
 import About from './About';
 import Season from './Season';
+import Players from './Players';
 
 
 class App extends React.Component {
@@ -23,6 +24,7 @@ class App extends React.Component {
             <div className="columns ">
               <Header/>
               <Route exact path="/" component={Home} />
+              <Route path="/players" component={Players} />
               <Route path="/random" component={Random} />
               <Route path="/about" component={About} />
               <Route path="/season" component={Season} />
