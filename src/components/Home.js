@@ -9,13 +9,15 @@ import CustomDot from './CustomDot';
 import * as helper from '../helper/dataCreator';
 
 
-import seasons from "../data/seasons.json";
+
+import teamList from "../data/teamList.json";
+import teams from "../data/teams.json";
 
 
 
-const graphColors = ["#82ca9d", "#3FAEFF", "#8884d8", "#FF7C14","#FFFF40", "#FF0000","#FF00FF", "#FFFFFF"];
-const optionsNames = ["Average 6s", "Average 4s", "Average Team Score", "Most Man of the Match", "Highest Team Score", "Highest Batsman Score", "Highest Wicket Taken (1 Match)", "Highest Catches (1 Match)"];
-// const optionsNames = ["Average Team Score","Highest Team Score", "Highest Batsman Score"];
+const graphColors = ["#3FAEFF","#82ca9d", "#8884d8", "#FF7C14","#FFFF40", "#FF0000","#FF00FF", "#FFFFFF", "blue", "purple","#ffd8b1","#808080	","#008080"];
+const optionsNames = teamList;
+const graphModeNames = ["Average Score", "Max Score", "Total 6s & 4s", "Match Won", "Match Won %", "Match Won if Toss Won %", "Match Won if Bat first %", "Match Won if Ball first %"];
 
 
 class Home extends React.Component {
@@ -24,12 +26,15 @@ class Home extends React.Component {
     super(props);
 
     this.state = {
-      options : [0,1]
+      graphOptions : [0,1],
+      graphMode : [0]
     };
 
     this.customDotOnClick = this.customDotOnClick.bind(this);
     this.getGraphLine = this.getGraphLine.bind(this);
     this.onGraphOptionClick = this.onGraphOptionClick.bind(this);
+    this.onGraphModeClick = this.onGraphModeClick.bind(this);
+
   }
 
   getGraphLine(keys,colors,options){
@@ -49,35 +54,42 @@ class Home extends React.Component {
 
   onGraphOptionClick(option){
     this.setState((prevState) => {
-      let options = prevState.options;
-      const index = options.indexOf(option);
+      let graphOptions = prevState.graphOptions;
+      const index = graphOptions.indexOf(option);
       if(index === -1){
-        options.push(option);
-        console.log(options);
+        graphOptions.push(option);
         return{
-          options
+          graphOptions
         };
       }else{
-        options.splice(index,1);
-        console.log(options);
+        graphOptions.splice(index,1);
         return{
-          options
+          graphOptions
         };
       }
     });
-
+  }
+  onGraphModeClick(option){
+    this.setState({
+      graphMode : [option]
+    });
   }
 
 
 
   render() {
-    const options = this.state.options;
-    const seasonData = helper.seasonData(seasons,options);
-    let data = seasonData.data;
-    let graphKeys = seasonData.graphKeys;
+    let teamNames = [];
+    this.state.graphOptions.forEach(function (options) {
+      teamNames.push(teamList[options]);
+    });
+    const teamData = helper.getTeamData(teams,teamNames,this.state.graphMode);
+    const data = teamData.graphData;
+    const graphKeys = teamData.graphKeys;
 
+    console.log(data);
 
-    const graphLines = this.getGraphLine(graphKeys,graphColors,options);
+    const graphLines = this.getGraphLine(graphKeys,graphColors,this.state.graphOptions);
+
     return (
       <section className="home-wrapper">
         <div className="row">
@@ -93,11 +105,11 @@ class Home extends React.Component {
 
               <ResponsiveContainer height={350}>
                 <LineChart data={data}>
-                  <XAxis dataKey="season"/>
+                  <XAxis dataKey="label"/>
                   <YAxis/>
                   <CartesianGrid strokeDasharray="5 0" stroke="#393840"/>
                   {/*<Tooltip wrapperStyle={{background: "black", "border": "none"}}/>*/}
-                  <Tooltip content={<CustomTooltip data={data} options={options} dataType="season" optionsNames={optionsNames} graphKeys={graphKeys} />} />
+                  <Tooltip content={<CustomTooltip data={data} options={this.state.graphOptions} dataType="season" optionsNames={optionsNames} graphKeys={graphKeys} />} />
                   {graphLines}
                 </LineChart>
 
@@ -107,7 +119,8 @@ class Home extends React.Component {
 
 
           <div className="columns small-12 large-4">
-            <GraphOption onClickHandler={this.onGraphOptionClick} colors={graphColors} options={this.state.options} optionsNames={optionsNames} />
+            <GraphOption onClickHandler={this.onGraphModeClick} colors={graphColors} mode="single" options={this.state.graphMode} optionsNames={graphModeNames} />
+            <GraphOption onClickHandler={this.onGraphOptionClick} colors={graphColors} mode="multi" options={this.state.graphOptions} optionsNames={optionsNames} />
           </div>
         </div>
       </section>

@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 
 const CustomDot = ({cx, cy, stroke, payload, value, onClickHandler}) => {
 
-
+  if(isNaN(cy)) cy = -100;
   return (
+
     <svg onClick={() => {
       onClickHandler(payload);
     }}>

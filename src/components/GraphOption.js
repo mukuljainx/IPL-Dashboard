@@ -1,11 +1,15 @@
 import  React from 'react';
 import PropTypes from 'prop-types';
 
-const GraphOption = ({options, optionsNames, colors, onClickHandler}) => {
+const GraphOption = ({options, optionsNames, colors, onClickHandler,mode}) => {
 
   const getGraphOptions = (options, colors) => {
     return optionsNames.map(function (optionsName, i) {
-      const color = options.indexOf(i) !== -1 ? colors[i] : "black";
+      let color = "";
+
+      if(mode === "single") color = options.indexOf(i) !== -1 ? colors[0] : "black";
+      else color = options.indexOf(i) !== -1 ? colors[i] : "black";
+
       return (
         <div key={i} className="columns small-12 medium-6 large-12">
           <div className="graph-option" onClick={() => {
@@ -18,9 +22,6 @@ const GraphOption = ({options, optionsNames, colors, onClickHandler}) => {
     });
   };
 
-  /*const onClickHandler = (i) => {
-   this.props.onClickHandler(i);
-   };*/
 
   const graphOptions = getGraphOptions(options, colors);
   return (
@@ -37,6 +38,7 @@ GraphOption.propTypes = {
   colors: PropTypes.array.isRequired,
   onClickHandler: PropTypes.func.isRequired,
   optionsNames: PropTypes.array.isRequired,
+  mode : PropTypes.string,
 };
 
 

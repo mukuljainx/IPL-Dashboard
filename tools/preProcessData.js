@@ -614,6 +614,11 @@ for(let i=0; i<matches.length; i++){
   if(teamList.indexOf(match.team2) === -1) teamList.push(match.team2);
 }
 
+const teamListJson = JSON.stringify(teamList);
+fs.writeFile('teamList.json', teamListJson, 'utf8', function () {
+  console.log('teamListJson written');
+});
+
 let teams = {};
 
 let matchWonTossWon = {};
@@ -709,10 +714,10 @@ for(let i=0; i<match.length; i++){
 }
 
 
-const teamJson = JSON.stringify(teams);
-fs.writeFile('teams.json', teamJson, 'utf8', function () {
-   console.log('teamJson written');
-});
+// const teamJson = JSON.stringify(teams);
+// fs.writeFile('teams.json', teamJson, 'utf8', function () {
+//    console.log('teamJson written');
+// });
 
 
 

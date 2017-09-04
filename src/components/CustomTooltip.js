@@ -3,18 +3,19 @@ import PropTypes from 'prop-types';
 
 const CustomTooltip = ({ payload, label, data, options, optionsNames, dataType, graphKeys}) => {
 
-  const base = data[0][dataType];
+  const base = data[0].label;
 
   const gettooltipContent = (payload) => {
 
     if(payload === undefined) return (<span />);
 
     return options.map(function (option, i) {
+
       return (
         <div key={i} className="row">
           <div className="columns small-12">
             {typeof(data[(label - base)][graphKeys[i]]) === "undefined" &&
-            <sapn><b>{optionsNames[option]}:</b> {data[(label - base)][graphKeys[i].replace("[value]","")].value} ({data[(label - base)][graphKeys[i].replace("[value]","")].name})</sapn>
+            <sapn><b>{optionsNames[option]}:</b> {data[(label - base)][graphKeys[i].replace("[value]","")].value} {data[(label - base)][graphKeys[i].replace("[value]","")].name !== "" && (data[(label - base)][graphKeys[i].replace("[value]","")].name)}</sapn>
             }
             {typeof(data[(label - base)][graphKeys[i]]) !== "undefined" &&
             <sapn><b>{optionsNames[option]}:</b> {data[(label - base)][graphKeys[i]]}</sapn>
@@ -38,11 +39,10 @@ const CustomTooltip = ({ payload, label, data, options, optionsNames, dataType, 
           <span><b>Year:</b> {label}</span>
           }
           <br />
-          <span><b>Season Winner:</b> {
-            data[(label - base)] !== undefined
-            &&
-            data[(label - base)]["winner"]
-          } </span> <br />
+          {dataType === "season" &&<span><b>Season Winner:</b>
+            {data[(label - base)]["winner"]}
+            </span>
+          } <br />
         </div>
       </div>
       {tooltipContent}
