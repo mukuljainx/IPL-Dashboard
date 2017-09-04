@@ -2,6 +2,7 @@ export function seasonData(seasons,options) {
 
   const allKeys = ["average6s","average4s","averageMatchScore","mostPlayerOfMatch[value]",
                    "highestTeamScore[value]", "highestBatsmanScore[value]", "HighestWicket[value]", "HighestCatches[value]"];
+
   let data = [];
   let graphKeys = [];
 
@@ -13,6 +14,7 @@ export function seasonData(seasons,options) {
   seasons.forEach(function (season) {
     let temp = {};
     temp.season = season.season;
+    temp.winner = season.winner;
 
     if(options.indexOf(0) !== -1){
       temp.average6s = parseFloat((season.total6s/season.totalMatch).toFixed(2));

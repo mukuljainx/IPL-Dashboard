@@ -447,6 +447,7 @@ for(let i=0; i< match.length; i++){
       closenessRun : 500,
       value : 0
     };
+    playerOfMatch = {};
   }
 
 }
