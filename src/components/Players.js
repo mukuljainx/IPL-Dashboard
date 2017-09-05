@@ -153,13 +153,14 @@ class Players extends React.Component {
 
           <div className={"columns small-12 large-4 " + this.state.graphModeClass}>
             <GraphOption onClickHandler={this.onGraphOptionClick} colors={graphColorsCurrent} mode="multi"
-                         options={this.state.graphOptions} optionsNames={optionsNames} colorCoded={true} height={350}/>
+                         options={this.state.graphOptions} optionsNames={optionsNames} colorCoded={true} height={350}
+                         searchEnabled={true} optionsNamesObject={players} />
           </div>
 
           <div className={"columns small-12 " + this.state.graphOptionsClass}>
             <GraphOption optionClassName="small-12 medium-6 large-3" onClickHandler={this.onGraphModeClick}
                          colors={graphColors} mode="single" options={this.state.graphMode}
-                         optionsNames={graphModeNames} seachEnabled={true} />
+                         optionsNames={graphModeNames} />
           </div>
 
         </div>

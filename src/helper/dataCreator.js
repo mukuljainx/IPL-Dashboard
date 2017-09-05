@@ -141,7 +141,7 @@ export function getPlayerData(players,playerNames,graphMode) {
     for (let i = 0; i < totalSeason; i++) {
       let temp = {label: 2008 + i};
       playerNames.forEach(function (player) {
-        temp[player] = {name: players[name], value: parseFloat(players[player.toLowerCase()][keys[graphMode]][i])};
+        temp[player] = {name: players[name], value: parseFloat(players[player][keys[graphMode]][i])};
       });
       graphData.push(temp);
     }
@@ -157,7 +157,7 @@ function seasonByMatchid(players,playerNames,A,B) {
   for (let i = 0; i < totalSeason; i++) {
     let temp = {label: 2008 + i};
     playerNames.forEach(function (player) {
-      temp[player] = {name: players[name], value: parseFloat((parseFloat(players[player.toLowerCase()][A][i])/parseFloat(players[player.toLowerCase()][B][i])).toFixed(2))};
+      temp[player] = {name: players[name], value: parseFloat((parseFloat(players[player][A][i])/parseFloat(players[player][B][i])).toFixed(2))};
     });
     graphData.push(temp);
   }
