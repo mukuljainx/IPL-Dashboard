@@ -70,16 +70,16 @@ class GraphOption extends React.Component {
     let style = {};
     if (height) {
       style = {
-        height: height,
+        maxHeight: height,
         overflow: "auto",
       };
     }
 
     return (
       <section className="user-option-wrapper">
-        <div className="row align-middle" style={style}>
+        <div className="row " style={style}>
           {searchEnabled &&
-          <div className={"columns " + optionClassName}>
+          <div className={"columns graph-option-searchbox small-12"}>
             <input value={this.state.searchValue} onChange={
               this.searchOnChange
             } type="text" placeholder="Search"/>
