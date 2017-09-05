@@ -67,7 +67,6 @@ class Players extends React.Component {
       if(index === -1){
         graphColorsCurrent["x" + option] = graphColorsMulti.pop();
         graphOptions.push(option);
-        console.log(graphColorsCurrent);
         return{
           graphOptions
         };
@@ -76,7 +75,6 @@ class Players extends React.Component {
         graphColorsMulti.push(graphColorsCurrent["x" + option]);
         //then remove it
         delete graphColorsCurrent["x" + option];
-        console.log(graphColorsCurrent);
 
         graphOptions.splice(index,1);
         return{
@@ -85,6 +83,7 @@ class Players extends React.Component {
       }
     });
   }
+
   onGraphModeClick(option){
     this.setState({
       graphMode : [option]

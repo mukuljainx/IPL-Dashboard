@@ -1,7 +1,6 @@
 import  React from 'react';
 import {LineChart, Line ,XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer} from 'recharts';
 
-import CustomLegend from './CustomLegend';
 import GraphOption from './GraphOption';
 import CustomTooltip from './CustomTooltip';
 import CustomDot from './CustomDot';
@@ -15,7 +14,11 @@ import teams from "../data/teams.json";
 
 
 
-const graphColors = ["#3FAEFF","#82ca9d", "#8884d8", "#FF7C14","#FFFF40", "#FF0000","#FF00FF", "#FFFFFF", "blue", "purple","#ffd8b1","#808080	","#008080"];
+const graphColors = ["#3FAEFF"];
+
+let graphColorsMulti = ["#008080", "#808080	", "#ffd8b1", "purple", "blue", "#FFFFFF", "#FF00FF", "#FF0000", "#FFFF40", "#FF7C14", "#8884d8"];
+let graphColorsCurrent = { x0 : "#82ca9d", x1 :"#3FAEFF"};
+
 const optionsNames = teamList;
 const graphModeNames = ["Average Score", "Max Score", "Total 6s & 4s", "Match Won", "Match Won %", "Match Won if Toss Won %", "Match Won if Bat first %", "Match Won if Ball first %"];
 
@@ -37,10 +40,11 @@ class Home extends React.Component {
 
   }
 
-  getGraphLine(keys,colors,options){
+  getGraphLine(keys,colors){
     const customDotOnClick = this.customDotOnClick;
+    const graphOptions = this.state.graphOptions;
     return keys.map(function (key,i) {
-      const color = colors[options[i]];
+      const color = colors["x" + graphOptions[i]];
       return (
         <Line key={i} type="monotone" activeDot={<CustomDot stroke={color} onClickHandler={customDotOnClick} />} dataKey={key} stroke={color}  />
       );
@@ -57,11 +61,17 @@ class Home extends React.Component {
       let graphOptions = prevState.graphOptions;
       const index = graphOptions.indexOf(option);
       if(index === -1){
+        graphColorsCurrent["x" + option] = graphColorsMulti.pop();
         graphOptions.push(option);
         return{
           graphOptions
         };
       }else{
+        //put the color back
+        graphColorsMulti.push(graphColorsCurrent["x" + option]);
+        //then remove it
+        delete graphColorsCurrent["x" + option];
+
         graphOptions.splice(index,1);
         return{
           graphOptions
@@ -69,6 +79,8 @@ class Home extends React.Component {
       }
     });
   }
+
+
   onGraphModeClick(option){
     this.setState({
       graphMode : [option]
@@ -86,9 +98,8 @@ class Home extends React.Component {
     const data = teamData.graphData;
     const graphKeys = teamData.graphKeys;
 
-    console.log(data);
 
-    const graphLines = this.getGraphLine(graphKeys,graphColors,this.state.graphOptions);
+    const graphLines = this.getGraphLine(graphKeys,graphColorsCurrent);
 
     return (
       <section className="home-wrapper">
@@ -120,7 +131,7 @@ class Home extends React.Component {
 
           <div className="columns small-12 large-4">
             <GraphOption onClickHandler={this.onGraphModeClick} colors={graphColors} mode="single" options={this.state.graphMode} optionsNames={graphModeNames} />
-            <GraphOption onClickHandler={this.onGraphOptionClick} colors={graphColors} mode="multi" options={this.state.graphOptions} optionsNames={optionsNames} colorCoded={true} />
+            <GraphOption onClickHandler={this.onGraphOptionClick} colors={graphColorsCurrent} mode="multi" options={this.state.graphOptions} optionsNames={optionsNames} colorCoded={true} />
           </div>
         </div>
       </section>

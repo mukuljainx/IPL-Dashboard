@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const GraphOption = ({options, optionsNames, colors, onClickHandler,mode, colorCoded}) => {
 
   const getGraphOptions = (options, colors) => {
-    
+
     return optionsNames.map(function (optionsName, i) {
       let color = "";
       if(mode === "single") color = options.indexOf(i) !== -1 ? colors[0] : "black";
