@@ -120,7 +120,7 @@ class Home extends React.Component {
 
           <div className="columns small-12 large-4">
             <GraphOption onClickHandler={this.onGraphModeClick} colors={graphColors} mode="single" options={this.state.graphMode} optionsNames={graphModeNames} />
-            <GraphOption onClickHandler={this.onGraphOptionClick} colors={graphColors} mode="multi" options={this.state.graphOptions} optionsNames={optionsNames} />
+            <GraphOption onClickHandler={this.onGraphOptionClick} colors={graphColors} mode="multi" options={this.state.graphOptions} optionsNames={optionsNames} colorCoded={true} />
           </div>
         </div>
       </section>

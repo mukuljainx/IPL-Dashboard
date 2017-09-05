@@ -1,4 +1,5 @@
 const totalSeason = 9;
+const seasonWinner = ["Rajasthan Royals","Deccan Chargers","Chennai Super Kings","Chennai Super Kings","Kolkata Knight Riders","Mumbai Indians","Kolkata Knight Riders","Mumbai Indians","Sunrisers Hyderabad","Mumbai Indians"];
 
 export function seasonData(seasons, options) {
 
@@ -79,7 +80,7 @@ export function getTeamData(teams, teamNames, graphMode) {
 
   if (graphMode[0] === 0) {
     for (let i = 0; i < totalSeason; i++) {
-      let temp = {label: 2008 + i, winner : "A"};
+      let temp = {label: 2008 + i, winner : seasonWinner[i]};
       teamNames.forEach(function (team) {
         temp[team] = {
           name: teams[name],
@@ -93,7 +94,7 @@ export function getTeamData(teams, teamNames, graphMode) {
 
   if (graphMode[0] === 4) {
     for (let i = 0; i < totalSeason; i++) {
-      let temp = {label: 2008 + i};
+      let temp = {label: 2008 + i, winner : seasonWinner[i]};
       teamNames.forEach(function (team) {
         temp[team] = {
           name: teams[name],
@@ -109,7 +110,7 @@ export function getTeamData(teams, teamNames, graphMode) {
 
 
   for (let i = 0; i < totalSeason; i++) {
-    let temp = {label: 2008 + i};
+    let temp = {label: 2008 + i, winner : seasonWinner[i]};
     teamNames.forEach(function (team) {
       temp[team] = {name: teams[name], value: parseFloat(teams[team][keys[graphMode]][i])};
     });
@@ -121,67 +122,47 @@ export function getTeamData(teams, teamNames, graphMode) {
 }
 
 
-export function playerData(deliveries, players, option) {
-  let data = [];
+export function getPlayerData(players,playerNames,graphMode) {
 
-  switch (option) {
-    case 0: { //total run per season
-      data = playersTotalScore(deliveries, players);
-      break;
-    }
+  let graphData = [];
+  let graphKeys = [];
 
-    case 1: { //average strike rate per season
-      data = playersTotalScore(deliveries, players, option);
-      break;
+  playerNames.forEach(function (player) {
+    graphKeys.push(player + "[value]");
+  });
+  // 2,8,9;
+
+  if(graphMode[0] === 2)  graphData = seasonByMatchid(players,playerNames,"totalScore","ballPlayed");
+  else if(graphMode[0] === 8)  graphData = seasonByMatchid(players,playerNames,"totalRunGiven","ballThrown");
+  else if(graphMode[0] === 9)  graphData = seasonByMatchid(players,playerNames,"ballThrown","totalRunGiven");
+  else {
+    const keys = ["totalScore", "maxScore", "NA", "total6s", "total4s", "matchPlayed", "nonStrikerRun", "wickets", "NA", "NA"];
+
+    for (let i = 0; i < totalSeason; i++) {
+      let temp = {label: 2008 + i};
+      playerNames.forEach(function (player) {
+        temp[player] = {name: players[name], value: parseFloat(players[player.toLowerCase()][keys[graphMode]][i])};
+      });
+      graphData.push(temp);
     }
   }
-
-  return data;
+  return {graphData, graphKeys};
 }
 
 
-function playersTotalScore(deliveries, players, option) {
-  let data = [];
-  let seasonId = seasonByMatchid(0);
-  let temp = {label: seasonId};
 
-  for (let i = 0; i < players.length; i++) {
-    temp[players[i]] = {name: players[i], value: 0};
+
+function seasonByMatchid(players,playerNames,A,B) {
+  let graphData = [];
+  for (let i = 0; i < totalSeason; i++) {
+    let temp = {label: 2008 + i};
+    playerNames.forEach(function (player) {
+      temp[player] = {name: players[name], value: parseFloat((parseFloat(players[player.toLowerCase()][A][i])/parseFloat(players[player.toLowerCase()][B][i])).toFixed(2))};
+    });
+    graphData.push(temp);
   }
 
-  for (let i = 0; i < deliveries.length; i++) {
-    if (seasonId === seasonByMatchid(deliveries[i].match_id)) {
-      if (temp[deliveries[i].batsman] !== undefined) {
-        temp[deliveries[i].batsman].value += parseInt(deliveries[i].batsman_runs);
-      }
-    } else {
-      seasonId = seasonByMatchid(i);
-      i--;
-      data.push(temp);
-      temp = {label: seasonId};
-      for (let i = 0; i < players.length; i++) {
-        temp[players[i]] = {name: players[i], value: 0};
-      }
-    }
-  }
-  data.push(temp);
-  return data;
-}
-
-function seasonByMatchid(matchId) {
-  const id = parseInt(matchId);
-
-  if (id <= 58)  return 2008;
-  if (id <= 115) return 2009;
-  if (id <= 175) return 2010;
-  if (id <= 248) return 2011;
-  if (id <= 322) return 2012;
-  if (id <= 398) return 2013;
-  if (id <= 458) return 2014;
-  if (id <= 517) return 2015;
-  if (id <= 577) return 2016;
-  return 2017;
-
+  return graphData;
 }
 
 

@@ -31,6 +31,8 @@ const CustomTooltip = ({ payload, label, data, options, optionsNames, dataType, 
 
   const tooltipContent = (payload  && payload.length > 0)? gettooltipContent(payload) : "";
 
+  if(label === undefined) return (<span />);
+
   return (
     <section className="custom-graph-tooltip">
       <div className="row">
