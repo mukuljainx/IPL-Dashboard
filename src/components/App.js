@@ -17,7 +17,7 @@ class App extends React.Component {
       <BrowserRouter>
         <div>
           <div className="collapse expanded row">
-            <div className="columns shrink">
+            <div className="columns shrink hide-for-small-only">
               <Menu/>
             </div>
             <div className="columns ">

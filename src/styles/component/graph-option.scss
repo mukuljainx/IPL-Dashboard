@@ -21,3 +21,14 @@
     vertical-align: middle;
   }
 }
+
+
+.criteria-button{
+  button{
+    margin-left: 25px;
+    margin-top: 25px;
+    font-weight: $font-weight-medium;
+    border: 1px solid white;
+    padding: 10px 15px;
+  }
+}

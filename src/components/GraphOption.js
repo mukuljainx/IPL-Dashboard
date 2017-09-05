@@ -1,7 +1,7 @@
 import  React from 'react';
 import PropTypes from 'prop-types';
 
-const GraphOption = ({options, optionsNames, colors, onClickHandler,mode, colorCoded}) => {
+const GraphOption = ({options, optionsNames, colors, onClickHandler,mode, colorCoded,height,optionClassName}) => {
 
   const getGraphOptions = (options, colors) => {
 
@@ -19,10 +19,8 @@ const GraphOption = ({options, optionsNames, colors, onClickHandler,mode, colorC
 
       }
 
-
-
       return (
-        <div key={i} className="columns small-12 medium-6 large-12">
+        <div key={i} className={"columns " + optionClassName}>
           <div className="graph-option" onClick={() => {
             onClickHandler(i);
           }}>
@@ -33,11 +31,18 @@ const GraphOption = ({options, optionsNames, colors, onClickHandler,mode, colorC
     });
   };
 
+  let style = {};
+  if(height){
+    style = {
+      height : height,
+      overflow : "auto",
+    };
+  }
 
   const graphOptions = getGraphOptions(options.slice(0), colors);
   return (
     <section className="user-option-wrapper">
-      <div className="row align-middle">
+      <div className="row align-middle" style={style} >
         {graphOptions}
       </div>
     </section>
@@ -50,7 +55,13 @@ GraphOption.propTypes = {
   onClickHandler: PropTypes.func.isRequired,
   optionsNames: PropTypes.array.isRequired,
   mode : PropTypes.string,
-  colorCoded : PropTypes.bool
+  colorCoded : PropTypes.bool,
+  height : PropTypes.number,
+  optionClassName : PropTypes.string,
+};
+
+GraphOption.defaultProps = {
+  optionClassName : "small-12 medium-6 large-12",
 };
 
 
