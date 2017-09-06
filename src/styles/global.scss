@@ -1,5 +1,6 @@
 body,html, #app{
   height: 100%;
+  width: 100%;
 }
 
 
@@ -110,4 +111,9 @@ button:hover {
 
 .recharts-dot-custom{
   cursor: pointer;
+}
+
+.app-wrapper{
+  min-height:100%;
+  width: 100%;
 }

@@ -14,7 +14,7 @@ class App extends React.Component {
   render() {
     return (
       <BrowserRouter basename="/demo/ipl-dashboard">
-        <div className="collapse expanded row">
+        <div className="collapse expanded row app-wrapper">
           <div className="columns shrink hide-for-small-only">
             <Menu/>
           </div>

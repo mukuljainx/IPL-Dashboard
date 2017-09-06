@@ -135,13 +135,6 @@ class GraphBundle extends React.Component {
         <Alert onRef={ref => (this.alertBox = ref)} alert={this.props.graphAlert} />
 
         <div className="row">
-          <div className="columns medium-12">
-            <div className="overview">
-              <h3>IPL Overview</h3>
-            </div>
-          </div>
-        </div>
-        <div className="row">
           <div className="columns small-11 medium-12 large-8">
             <div className="graph-box">
 

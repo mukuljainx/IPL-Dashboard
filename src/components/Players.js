@@ -43,8 +43,15 @@ class Players extends React.Component {
 
     return (
       <section style={{position: "relative"}}>
+        <div className="row">
+          <div className="columns medium-12">
+            <div className="overview">
+              <h3>Players Overview</h3>
+            </div>
+          </div>
+        </div>
         {this.state.ready && <GraphBundle objectsList={this.state.playerList} objects={this.state.players}
-                                          graphModeNames={this.graphModeNames} switchName="Teams"
+                                          graphModeNames={this.graphModeNames} switchName="Players"
                                           graphColorsMulti={this.graphColorsMulti}
                                           graphColorsCurrent={this.graphColorsCurrent}
                                           graphAlert="Please remove a player to add another"

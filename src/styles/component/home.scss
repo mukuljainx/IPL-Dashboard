@@ -5,3 +5,25 @@
   }
 }
 
+
+.tabs-wrapper{
+  ul{
+    background: transparent;
+    border: none;
+  }
+  li{
+    width: 25%;
+    text-align: center;
+  }
+  a:hover{
+    background: transparent;
+    color: white;
+    border-bottom: 1px solid white;
+  }
+  a {
+    color : White;
+  }
+  .is-active a{
+    border-bottom: 2px solid white;
+  }
+}

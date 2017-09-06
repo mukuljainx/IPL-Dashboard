@@ -4,236 +4,236 @@ import matches from '../src/iplData/matches.json';
 const fs = require('fs');
 
 
-let ifMax = (A,key,name,value) => {
-  if(A[key].value < value){
-    A[key].name = name;
-    A[key].value= value;
-  }
-};
-
-let ifMax6s4s = (A,key,name, total6s, total4s) => {
-  if(A[key].value < total6s + total4s){
-    A[key].name = name;
-    A[key].value= (total6s + total4s);
-    A[key].total6s= total6s;
-    A[key].total4s= total4s;
-  }
-};
-
-
-let match = [];
-let matchId = 0;
-
-let singleMatch = {
-  date : matches[matchId].date,
-  matchId : parseInt(matches[matchId].id),
-  seasonId : parseInt(matches[matchId].season),
-  results : matches[matchId].result,
-  winner : matches[matchId].winner,
-  closenessRun : parseInt(matches[matchId].win_by_runs),
-  closenessWicket : parseInt(matches[matchId].win_by_wickets),
-  tossWinner :  matches[matchId].toss_winner,
-  batFirst:  matches[matchId].toss_decision === "field" ? (matches[matchId].toss_winner === matches[matchId].team1 ? matches[matchId].team2 : matches[matchId].team1) : matches[matchId].toss_winner,
-  ballFirst: matches[matchId].toss_decision === "bat" ? (matches[matchId].toss_winner === matches[matchId].team1 ? matches[matchId].team2 : matches[matchId].team1) : matches[matchId].toss_winner,
-  team1Score: {
-    total4s : 0,
-    total6s : 0,
-    name : matches[matchId].toss_decision === "field" ? (matches[matchId].toss_winner === matches[matchId].team1 ? matches[matchId].team2 : matches[matchId].team1) : matches[matchId].toss_winner,
-    value : 0,
-  },
-  team2Score: {
-    total4s : 0,
-    total6s : 0,
-    name : matches[matchId].toss_decision === "bat" ? (matches[matchId].toss_winner === matches[matchId].team1 ? matches[matchId].team2 : matches[matchId].team1) : matches[matchId].toss_winner,
-    value : 0,
-  },
-  max6s4s:{
-    name : "",
-    value : 0,
-    total4s :0,
-    total6s :0
-},
-  maxScore:{
-    name : "",
-    value : 0,
-    strikeRate : 0,
-  },
-  maxWicket:{
-    name : "",
-    value : 0,
-  },
-  maxCatch:{
-    name : "",
-    value : 0,
-  },
-  playerOfMatch:matches[matchId].player_of_match,
-  averageBatsmanScore : 0,
-  totalBatsmanPlayed : 0,
-  totalWicketTaken : 0,
-  totalBowlerPlayed : 0,
-  averageWicketTaken : 0,
-};
-
-
-let bowlers = {};
-let fielders = {};
-let batsman = {};
-let max6s4s = {};
-
-for(let i=0; i < deliveries.length; i++){
-  if(singleMatch.matchId === parseInt(deliveries[i].match_id)){
-
-    //max score
-    if(batsman[deliveries[i].batsman] === undefined){
-      batsman[deliveries[i].batsman] = {};
-      batsman[deliveries[i].batsman].name = deliveries[i].batsman;
-      batsman[deliveries[i].batsman].value = parseInt(deliveries[i].batsman_runs);
-      batsman[deliveries[i].batsman].balls = 1 ;
-      ifMax(singleMatch, "maxScore", deliveries[i].batsman, batsman[deliveries[i].batsman].value);
-
-      singleMatch.totalBatsmanPlayed++;
-      singleMatch.averageBatsmanScore += parseInt(deliveries[i].batsman_runs);
-
-    }else{
-      batsman[deliveries[i].batsman].value += parseInt(deliveries[i].batsman_runs);
-      batsman[deliveries[i].batsman].balls = (parseInt(deliveries[i].extra_runs) === 0 || parseInt(deliveries[i].legbye_runs) !== 0)  ? batsman[deliveries[i].batsman].balls + 1 : batsman[deliveries[i].batsman].balls;
-      ifMax(singleMatch, "maxScore", deliveries[i].batsman, batsman[deliveries[i].batsman].value);
-
-      singleMatch.averageBatsmanScore += parseInt(deliveries[i].batsman_runs);
-    }
-
-    //wicket -  catches
-    if(deliveries[i].player_dismissed !== ""){
-      if(deliveries[i].dismissal_kind !== "run out") {
-
-        if (bowlers[deliveries[i].bowler] === undefined) {
-          bowlers[deliveries[i].bowler] = 1;
-          ifMax(singleMatch, "maxWicket", deliveries[i].bowler, bowlers[deliveries[i].bowler]);
-
-          singleMatch.totalBowlerPlayed++;
-        } else {
-          bowlers[deliveries[i].bowler] += 1;
-          ifMax(singleMatch, "maxWicket", deliveries[i].bowler, bowlers[deliveries[i].bowler]);
-        }
-
-
-        singleMatch.totalWicketTaken++;
-
-
-        if(deliveries[i].dismissal_kind === "caught") {
-          if (fielders[deliveries[i].fielder] === undefined) {
-            fielders[deliveries[i].fielder] = 1;
-            ifMax(singleMatch, "maxCatch", deliveries[i].fielder, fielders[deliveries[i].fielder]);
-          } else {
-            fielders[deliveries[i].fielder] += 1;
-            ifMax(singleMatch, "maxCatch", deliveries[i].fielder, fielders[deliveries[i].fielder]);
-          }
-        }
-      }
-    }
-
-    //player with max 6s & 4s
-    if(deliveries[i].batsman_runs === "6" || deliveries[i].batsman_runs === "4"){
-      if(max6s4s[deliveries[i].batsman] === undefined){
-        max6s4s[deliveries[i].batsman] = {};
-        max6s4s[deliveries[i].batsman].value = 1;
-        max6s4s[deliveries[i].batsman].total6s = deliveries[i].batsman_runs === "6" ? 1 : 0;
-        max6s4s[deliveries[i].batsman].total4s = deliveries[i].batsman_runs === "4" ? 1 : 0;
-        ifMax6s4s(singleMatch, "max6s4s", deliveries[i].batsman, max6s4s[deliveries[i].batsman].total6s, max6s4s[deliveries[i].batsman].total4s);
-      }else{
-        max6s4s[deliveries[i].batsman].value = max6s4s[deliveries[i].batsman].value + 1;
-        max6s4s[deliveries[i].batsman].total6s = deliveries[i].batsman_runs === "6" ? max6s4s[deliveries[i].batsman].total6s+1 : max6s4s[deliveries[i].batsman].total6s;
-        max6s4s[deliveries[i].batsman].total4s = deliveries[i].batsman_runs === "4" ? max6s4s[deliveries[i].batsman].total4s+1 : max6s4s[deliveries[i].batsman].total4s;
-        ifMax6s4s(singleMatch, "max6s4s", deliveries[i].batsman, max6s4s[deliveries[i].batsman].total6s, max6s4s[deliveries[i].batsman].total4s);
-      }
-    }
-
-
-    singleMatch.total4s = deliveries[i].batsman_runs === "4" ? (singleMatch.total4s + 1) : singleMatch.total4s;
-
-    /** total team score **/
-    if(deliveries[i].inning === "1"){
-      singleMatch.team1Score.name = deliveries[i].batting_team;
-      singleMatch.team1Score.value += parseInt(deliveries[i].total_runs);
-      singleMatch.team1Score.total6s += deliveries[i].batsman_runs === "6" ? 1 : 0;
-      singleMatch.team1Score.total4s += deliveries[i].batsman_runs === "4" ? 1 : 0;
-    }else{
-      singleMatch.team2Score.name = deliveries[i].batting_team;
-      singleMatch.team2Score.value += parseInt(deliveries[i].total_runs);
-      singleMatch.team2Score.total6s += deliveries[i].batsman_runs === "6" ? 1 : 0;
-      singleMatch.team2Score.total4s += deliveries[i].batsman_runs === "4" ? 1 : 0;
-    }
-
-
-  }else{
-    //calculating strike rate
-    // console.log(batsman[singleMatch.maxScore.name].balls);
-    singleMatch.maxScore.strikeRate = ((singleMatch.maxScore.value/batsman[singleMatch.maxScore.name].balls) * 100).toFixed(2);
-    singleMatch.averageBatsmanScore = (singleMatch.averageBatsmanScore/singleMatch.totalBatsmanPlayed).toFixed(2);
-    singleMatch.averageWicketTaken = (singleMatch.totalWicketTaken / singleMatch.totalBowlerPlayed).toFixed(2);
-    match.push(singleMatch);
-    matchId++;
-    i--;
-    singleMatch = {
-      date : matches[matchId].date,
-      matchId : parseInt(matches[matchId].id),
-      seasonId : parseInt(matches[matchId].season),
-      results : matches[matchId].result,
-      winner : matches[matchId].winner,
-      closenessRun : parseInt(matches[matchId].win_by_runs),
-      closenessWicket : parseInt(matches[matchId].win_by_wickets),
-      tossWinner :  matches[matchId].toss_winner,
-      batFirst:  matches[matchId].toss_decision === "field" ? (matches[matchId].toss_winner === matches[matchId].team1 ? matches[matchId].team2 : matches[matchId].team1) : matches[matchId].toss_winner,
-      ballFirst: matches[matchId].toss_decision === "bat" ? (matches[matchId].toss_winner === matches[matchId].team1 ? matches[matchId].team2 : matches[matchId].team1) : matches[matchId].toss_winner,
-      team1Score: {
-        total4s : 0,
-        total6s : 0,
-        name :  matches[matchId].toss_decision === "field" ? (matches[matchId].toss_winner === matches[matchId].team1 ? matches[matchId].team2 : matches[matchId].team1) : matches[matchId].toss_winner,
-        value : 0,
-      },
-      team2Score: {
-        total4s : 0,
-        total6s : 0,
-        name :  matches[matchId].toss_decision === "bat" ? (matches[matchId].toss_winner === matches[matchId].team1 ? matches[matchId].team2 : matches[matchId].team1) : matches[matchId].toss_winner,
-        value : 0,
-      },
-      max6s4s:{
-        name : "",
-        value : 0,
-        total4s :0,
-        total6s :0
-      },
-      maxScore:{
-        name : "",
-        value : 0,
-        strikeRate : 0,
-      },
-      maxWicket:{
-        name : "",
-        value : 0,
-      },
-      maxCatch:{
-        name : "",
-        value : 0,
-      },
-      playerOfMatch:matches[matchId].player_of_match,
-      averageBatsmanScore : 0,
-      totalBatsmanPlayed : 0,
-      totalWicketTaken : 0,
-      totalBowlerPlayed : 0,
-      averageWicketTaken : 0,
-    };
-    bowlers = {};
-    fielders = {};
-    batsman = {};
-    max6s4s = {};
-  }
-}
-
-singleMatch.maxScore.strikeRate = ((singleMatch.maxScore.value/batsman[singleMatch.maxScore.name].balls) * 100).toFixed(2);
-singleMatch.averageBatsmanScore = (singleMatch.averageBatsmanScore/singleMatch.totalBatsmanPlayed).toFixed(2);
-singleMatch.averageWicketTaken = (singleMatch.totalWicketTaken / singleMatch.totalBowlerPlayed).toFixed(2);
-match.push(singleMatch);
+// let ifMax = (A,key,name,value) => {
+//   if(A[key].value < value){
+//     A[key].name = name;
+//     A[key].value= value;
+//   }
+// };
+//
+// let ifMax6s4s = (A,key,name, total6s, total4s) => {
+//   if(A[key].value < total6s + total4s){
+//     A[key].name = name;
+//     A[key].value= (total6s + total4s);
+//     A[key].total6s= total6s;
+//     A[key].total4s= total4s;
+//   }
+// };
+//
+//
+// let match = [];
+// let matchId = 0;
+//
+// let singleMatch = {
+//   date : matches[matchId].date,
+//   matchId : parseInt(matches[matchId].id),
+//   seasonId : parseInt(matches[matchId].season),
+//   results : matches[matchId].result,
+//   winner : matches[matchId].winner,
+//   closenessRun : parseInt(matches[matchId].win_by_runs),
+//   closenessWicket : parseInt(matches[matchId].win_by_wickets),
+//   tossWinner :  matches[matchId].toss_winner,
+//   batFirst:  matches[matchId].toss_decision === "field" ? (matches[matchId].toss_winner === matches[matchId].team1 ? matches[matchId].team2 : matches[matchId].team1) : matches[matchId].toss_winner,
+//   ballFirst: matches[matchId].toss_decision === "bat" ? (matches[matchId].toss_winner === matches[matchId].team1 ? matches[matchId].team2 : matches[matchId].team1) : matches[matchId].toss_winner,
+//   team1Score: {
+//     total4s : 0,
+//     total6s : 0,
+//     name : matches[matchId].toss_decision === "field" ? (matches[matchId].toss_winner === matches[matchId].team1 ? matches[matchId].team2 : matches[matchId].team1) : matches[matchId].toss_winner,
+//     value : 0,
+//   },
+//   team2Score: {
+//     total4s : 0,
+//     total6s : 0,
+//     name : matches[matchId].toss_decision === "bat" ? (matches[matchId].toss_winner === matches[matchId].team1 ? matches[matchId].team2 : matches[matchId].team1) : matches[matchId].toss_winner,
+//     value : 0,
+//   },
+//   max6s4s:{
+//     name : "",
+//     value : 0,
+//     total4s :0,
+//     total6s :0
+// },
+//   maxScore:{
+//     name : "",
+//     value : 0,
+//     strikeRate : 0,
+//   },
+//   maxWicket:{
+//     name : "",
+//     value : 0,
+//   },
+//   maxCatch:{
+//     name : "",
+//     value : 0,
+//   },
+//   playerOfMatch:matches[matchId].player_of_match,
+//   averageBatsmanScore : 0,
+//   totalBatsmanPlayed : 0,
+//   totalWicketTaken : 0,
+//   totalBowlerPlayed : 0,
+//   averageWicketTaken : 0,
+// };
+//
+//
+// let bowlers = {};
+// let fielders = {};
+// let batsman = {};
+// let max6s4s = {};
+//
+// for(let i=0; i < deliveries.length; i++){
+//   if(singleMatch.matchId === parseInt(deliveries[i].match_id)){
+//
+//     //max score
+//     if(batsman[deliveries[i].batsman] === undefined){
+//       batsman[deliveries[i].batsman] = {};
+//       batsman[deliveries[i].batsman].name = deliveries[i].batsman;
+//       batsman[deliveries[i].batsman].value = parseInt(deliveries[i].batsman_runs);
+//       batsman[deliveries[i].batsman].balls = 1 ;
+//       ifMax(singleMatch, "maxScore", deliveries[i].batsman, batsman[deliveries[i].batsman].value);
+//
+//       singleMatch.totalBatsmanPlayed++;
+//       singleMatch.averageBatsmanScore += parseInt(deliveries[i].batsman_runs);
+//
+//     }else{
+//       batsman[deliveries[i].batsman].value += parseInt(deliveries[i].batsman_runs);
+//       batsman[deliveries[i].batsman].balls = (parseInt(deliveries[i].extra_runs) === 0 || parseInt(deliveries[i].legbye_runs) !== 0)  ? batsman[deliveries[i].batsman].balls + 1 : batsman[deliveries[i].batsman].balls;
+//       ifMax(singleMatch, "maxScore", deliveries[i].batsman, batsman[deliveries[i].batsman].value);
+//
+//       singleMatch.averageBatsmanScore += parseInt(deliveries[i].batsman_runs);
+//     }
+//
+//     //wicket -  catches
+//     if(deliveries[i].player_dismissed !== ""){
+//       if(deliveries[i].dismissal_kind !== "run out") {
+//
+//         if (bowlers[deliveries[i].bowler] === undefined) {
+//           bowlers[deliveries[i].bowler] = 1;
+//           ifMax(singleMatch, "maxWicket", deliveries[i].bowler, bowlers[deliveries[i].bowler]);
+//
+//           singleMatch.totalBowlerPlayed++;
+//         } else {
+//           bowlers[deliveries[i].bowler] += 1;
+//           ifMax(singleMatch, "maxWicket", deliveries[i].bowler, bowlers[deliveries[i].bowler]);
+//         }
+//
+//
+//         singleMatch.totalWicketTaken++;
+//
+//
+//         if(deliveries[i].dismissal_kind === "caught") {
+//           if (fielders[deliveries[i].fielder] === undefined) {
+//             fielders[deliveries[i].fielder] = 1;
+//             ifMax(singleMatch, "maxCatch", deliveries[i].fielder, fielders[deliveries[i].fielder]);
+//           } else {
+//             fielders[deliveries[i].fielder] += 1;
+//             ifMax(singleMatch, "maxCatch", deliveries[i].fielder, fielders[deliveries[i].fielder]);
+//           }
+//         }
+//       }
+//     }
+//
+//     //player with max 6s & 4s
+//     if(deliveries[i].batsman_runs === "6" || deliveries[i].batsman_runs === "4"){
+//       if(max6s4s[deliveries[i].batsman] === undefined){
+//         max6s4s[deliveries[i].batsman] = {};
+//         max6s4s[deliveries[i].batsman].value = 1;
+//         max6s4s[deliveries[i].batsman].total6s = deliveries[i].batsman_runs === "6" ? 1 : 0;
+//         max6s4s[deliveries[i].batsman].total4s = deliveries[i].batsman_runs === "4" ? 1 : 0;
+//         ifMax6s4s(singleMatch, "max6s4s", deliveries[i].batsman, max6s4s[deliveries[i].batsman].total6s, max6s4s[deliveries[i].batsman].total4s);
+//       }else{
+//         max6s4s[deliveries[i].batsman].value = max6s4s[deliveries[i].batsman].value + 1;
+//         max6s4s[deliveries[i].batsman].total6s = deliveries[i].batsman_runs === "6" ? max6s4s[deliveries[i].batsman].total6s+1 : max6s4s[deliveries[i].batsman].total6s;
+//         max6s4s[deliveries[i].batsman].total4s = deliveries[i].batsman_runs === "4" ? max6s4s[deliveries[i].batsman].total4s+1 : max6s4s[deliveries[i].batsman].total4s;
+//         ifMax6s4s(singleMatch, "max6s4s", deliveries[i].batsman, max6s4s[deliveries[i].batsman].total6s, max6s4s[deliveries[i].batsman].total4s);
+//       }
+//     }
+//
+//
+//     singleMatch.total4s = deliveries[i].batsman_runs === "4" ? (singleMatch.total4s + 1) : singleMatch.total4s;
+//
+//     /** total team score **/
+//     if(deliveries[i].inning === "1"){
+//       singleMatch.team1Score.name = deliveries[i].batting_team;
+//       singleMatch.team1Score.value += parseInt(deliveries[i].total_runs);
+//       singleMatch.team1Score.total6s += deliveries[i].batsman_runs === "6" ? 1 : 0;
+//       singleMatch.team1Score.total4s += deliveries[i].batsman_runs === "4" ? 1 : 0;
+//     }else{
+//       singleMatch.team2Score.name = deliveries[i].batting_team;
+//       singleMatch.team2Score.value += parseInt(deliveries[i].total_runs);
+//       singleMatch.team2Score.total6s += deliveries[i].batsman_runs === "6" ? 1 : 0;
+//       singleMatch.team2Score.total4s += deliveries[i].batsman_runs === "4" ? 1 : 0;
+//     }
+//
+//
+//   }else{
+//     //calculating strike rate
+//     // console.log(batsman[singleMatch.maxScore.name].balls);
+//     singleMatch.maxScore.strikeRate = ((singleMatch.maxScore.value/batsman[singleMatch.maxScore.name].balls) * 100).toFixed(2);
+//     singleMatch.averageBatsmanScore = (singleMatch.averageBatsmanScore/singleMatch.totalBatsmanPlayed).toFixed(2);
+//     singleMatch.averageWicketTaken = (singleMatch.totalWicketTaken / singleMatch.totalBowlerPlayed).toFixed(2);
+//     match.push(singleMatch);
+//     matchId++;
+//     i--;
+//     singleMatch = {
+//       date : matches[matchId].date,
+//       matchId : parseInt(matches[matchId].id),
+//       seasonId : parseInt(matches[matchId].season),
+//       results : matches[matchId].result,
+//       winner : matches[matchId].winner,
+//       closenessRun : parseInt(matches[matchId].win_by_runs),
+//       closenessWicket : parseInt(matches[matchId].win_by_wickets),
+//       tossWinner :  matches[matchId].toss_winner,
+//       batFirst:  matches[matchId].toss_decision === "field" ? (matches[matchId].toss_winner === matches[matchId].team1 ? matches[matchId].team2 : matches[matchId].team1) : matches[matchId].toss_winner,
+//       ballFirst: matches[matchId].toss_decision === "bat" ? (matches[matchId].toss_winner === matches[matchId].team1 ? matches[matchId].team2 : matches[matchId].team1) : matches[matchId].toss_winner,
+//       team1Score: {
+//         total4s : 0,
+//         total6s : 0,
+//         name :  matches[matchId].toss_decision === "field" ? (matches[matchId].toss_winner === matches[matchId].team1 ? matches[matchId].team2 : matches[matchId].team1) : matches[matchId].toss_winner,
+//         value : 0,
+//       },
+//       team2Score: {
+//         total4s : 0,
+//         total6s : 0,
+//         name :  matches[matchId].toss_decision === "bat" ? (matches[matchId].toss_winner === matches[matchId].team1 ? matches[matchId].team2 : matches[matchId].team1) : matches[matchId].toss_winner,
+//         value : 0,
+//       },
+//       max6s4s:{
+//         name : "",
+//         value : 0,
+//         total4s :0,
+//         total6s :0
+//       },
+//       maxScore:{
+//         name : "",
+//         value : 0,
+//         strikeRate : 0,
+//       },
+//       maxWicket:{
+//         name : "",
+//         value : 0,
+//       },
+//       maxCatch:{
+//         name : "",
+//         value : 0,
+//       },
+//       playerOfMatch:matches[matchId].player_of_match,
+//       averageBatsmanScore : 0,
+//       totalBatsmanPlayed : 0,
+//       totalWicketTaken : 0,
+//       totalBowlerPlayed : 0,
+//       averageWicketTaken : 0,
+//     };
+//     bowlers = {};
+//     fielders = {};
+//     batsman = {};
+//     max6s4s = {};
+//   }
+// }
+//
+// singleMatch.maxScore.strikeRate = ((singleMatch.maxScore.value/batsman[singleMatch.maxScore.name].balls) * 100).toFixed(2);
+// singleMatch.averageBatsmanScore = (singleMatch.averageBatsmanScore/singleMatch.totalBatsmanPlayed).toFixed(2);
+// singleMatch.averageWicketTaken = (singleMatch.totalWicketTaken / singleMatch.totalBowlerPlayed).toFixed(2);
+// match.push(singleMatch);
 
 // const finalJson = JSON.stringify(match);
 // fs.writeFile('matches.json', finalJson, 'utf8', function () {
@@ -522,7 +522,7 @@ playersList.forEach(function (player,i) {
 //   console.log('playersListJson written');
 // });
 
-matchId = deliveries[0].match_id;
+let matchId = deliveries[0].match_id;
 
 let totalScoreMatch = {};
 let totalBallsMatch = {};
@@ -600,128 +600,196 @@ function seasonByMatchid(matchId) {
 }
 
 
-const playersJson = JSON.stringify(players);
-fs.writeFile('players.json', playersJson, 'utf8', function () {
-  console.log('playersJson written');
-});
+// const playersJson = JSON.stringify(players);
+// fs.writeFile('players.json', playersJson, 'utf8', function () {
+//   console.log('playersJson written');
+// });
 
 
 /** Team data **/
 
-let teamList = [];
+// let teamList = [];
+//
+// for(let i=0; i<matches.length; i++){
+//   const match = matches[i];
+//   if(teamList.indexOf(match.team1) === -1) teamList.push(match.team1);
+//   if(teamList.indexOf(match.team2) === -1) teamList.push(match.team2);
+// }
+//
+// const teamListJson = JSON.stringify(teamList);
+// fs.writeFile('teamList.json', teamListJson, 'utf8', function () {
+//   console.log('teamListJson written');
+// });
+//
+// let teams = {};
+//
+// let matchWonTossWon = {};
+// let tossWon = {};
+//
+// let matchWonBatFirst = {};
+// let batFirst = {};
+//
+// let matchWonBowledFirst = {};
+// let ballFirst = {};
+//
+// teamList.forEach(function (team,i) {
+//   teams[team] = {
+//     name : team,
+//     id : i,
+//     maxScore: [0,0,0,0,0,0,0,0,0], //x
+//     totalScore: [0,0,0,0,0,0,0,0,0], //x
+//     totalMatchPlayed: [0,0,0,0,0,0,0,0,0], //x
+//     matchWon: [0,0,0,0,0,0,0,0,0], //x
+//     matchWonTossWonPercentage: [0,0,0,0,0,0,0,0,0], //x
+//     total6s4s: [0,0,0,0,0,0,0,0,0], //x
+//     matchWonBatFirst: [0,0,0,0,0,0,0,0,0], //x
+//     matchWonBowledFirst: [0,0,0,0,0,0,0,0,0], //x
+//   };
+//   matchWonTossWon[team] = 0;
+//   tossWon[team] = 0;
+//
+//   matchWonBatFirst[team] = 0;
+//   batFirst[team] = 0;
+//
+//   matchWonBowledFirst[team] = 0;
+//   ballFirst[team] = 0;
+// });
+//
+//
+//
+// for(let i=0; i<match.length; i++){
+//
+//   const mat  = match[i];
+//   const base = seasonByMatchid(mat.matchId);
+//   // console.log(mat.team1Score.name,mat.team2Score.name);
+//   teams[mat.team1Score.name].maxScore[base] = Math.max( mat.team1Score.value, teams[mat.team1Score.name].maxScore[base]);
+//   teams[mat.team2Score.name].maxScore[base] = Math.max( mat.team2Score.value, teams[mat.team2Score.name].maxScore[base]);
+//
+//   teams[mat.team1Score.name].totalScore[base] += mat.team1Score.value;
+//   teams[mat.team2Score.name].totalScore[base] += mat.team2Score.value;
+//
+//   teams[mat.team1Score.name].totalMatchPlayed[base] += 1;
+//   teams[mat.team2Score.name].totalMatchPlayed[base] += 1;
+//
+//   teams[mat.team1Score.name].matchWon[base] += mat.team1Score.name === mat.winner ? 1 : 0;
+//   teams[mat.team2Score.name].matchWon[base] += mat.team2Score.name === mat.winner ? 1 : 0;
+//
+//   teams[mat.team1Score.name].total6s4s[base] += mat.team1Score.total6s + mat.team1Score.total4s;
+//   teams[mat.team2Score.name].total6s4s[base] += mat.team2Score.total6s + mat.team2Score.total4s;
+//
+//
+//   matchWonTossWon[mat.winner] += mat.winner === mat.tossWinner ? 1 : 0;
+//   tossWon[mat.tossWinner]++;
+//
+//   matchWonBatFirst[mat.winner] += mat.winner === mat.batFirst ? 1 : 0;
+//   batFirst[mat.batFirst]++;
+//
+//   matchWonBowledFirst[mat.winner] += mat.winner === mat.ballFirst ? 1 : 0;
+//   ballFirst[mat.ballFirst]++;
+//
+//   if(base !== seasonByMatchid((mat.matchId + 1))){
+//
+//     /** resetting **/
+//     teamList.forEach(function (team) {
+//
+//       /** toss won **/
+//       teams[team].matchWonTossWonPercentage[base] = (matchWonTossWon[team]*100/tossWon[team]).toFixed(2);
+//
+//
+//       /** bat won **/
+//       teams[team].matchWonBatFirst[base] = (matchWonBatFirst[team]*100/batFirst[team]).toFixed(2);
+//
+//
+//       /** ball won **/
+//       teams[team].matchWonBowledFirst[base] = (matchWonBowledFirst[team]*100/ballFirst[team]).toFixed(2);
+//
+//       matchWonTossWon[team] = 0;
+//       tossWon[team] = 0;
+//
+//       matchWonBatFirst[team] = 0;
+//       batFirst[team] = 0;
+//
+//       matchWonBowledFirst[team] = 0;
+//       ballFirst[team] = 0;
+//     });
+//
+//   }
+// }
+//
+//
+// const teamJson = JSON.stringify(teams);
+// fs.writeFile('teams.json', teamJson, 'utf8', function () {
+//    console.log('teamJson written');
+// });
+//
 
-for(let i=0; i<matches.length; i++){
-  const match = matches[i];
-  if(teamList.indexOf(match.team1) === -1) teamList.push(match.team1);
-  if(teamList.indexOf(match.team2) === -1) teamList.push(match.team2);
+function sumArray(A) {
+  let total = 0;
+  A.forEach(function (a) {
+    total += a;
+  });
+  return total;
 }
 
-const teamListJson = JSON.stringify(teamList);
-fs.writeFile('teamList.json', teamListJson, 'utf8', function () {
-  console.log('teamListJson written');
-});
 
-let teams = {};
 
-let matchWonTossWon = {};
-let tossWon = {};
+// const topBat = ["SK Raina","V Kohli","R Sharma","G Gambhir","DA Warner","RV Uthappa","CH Gayle","S Dhawan","MS Dhoni","AB de Villiers"];
+// let topBatsman = {};
+//
+// topBat.forEach(function (player) {
+//
+//   topBatsman[player] = {
+//     name : player,
+//     id : z,
+//     totalScore : sumArray(players[player].totalScore),
+//     ballPlayed : sumArray(players[player].ballPlayed),
+//     maxScore: Math.max(...players[player].maxScore),
+//     total6s: sumArray(players[player].total6s),
+//     total4s : sumArray(players[player].total4s),
+//     matchPlayed: sumArray(players[player].matchPlayed),
+//     nonStrikerRun: sumArray(players[player].nonStrikerRun),
+//     wickets: sumArray(players[player].wickets),
+//     ballThrown: sumArray(players[player].ballThrown),
+//     totalRunGiven: sumArray(players[player].totalRunGiven),
+//   };
+//
+// });
+//
+// const x = JSON.stringify(topBatsman);
+//
+// // console.log(topBatsman["V Kohli"]);
+//
+// fs.writeFile('topBatsman.json', x, 'utf8', function () {
+//    console.log('topBatsman written');
+// });
 
-let matchWonBatFirst = {};
-let batFirst = {};
+const topBol = ["SL Malinga","A Mishra","Harbhajan Singh", "PP Chawla","DJ Bravo", "B Kumar", "A Nehra", "R Vinay Kumar", "Z Khan", "R Ashwin"];
+let topBowler = {};
 
-let matchWonBowledFirst = {};
-let ballFirst = {};
+topBol.forEach(function (player) {
 
-teamList.forEach(function (team,i) {
-  teams[team] = {
-    name : team,
-    id : i,
-    maxScore: [0,0,0,0,0,0,0,0,0], //x
-    totalScore: [0,0,0,0,0,0,0,0,0], //x
-    totalMatchPlayed: [0,0,0,0,0,0,0,0,0], //x
-    matchWon: [0,0,0,0,0,0,0,0,0], //x
-    matchWonTossWonPercentage: [0,0,0,0,0,0,0,0,0], //x
-    total6s4s: [0,0,0,0,0,0,0,0,0], //x
-    matchWonBatFirst: [0,0,0,0,0,0,0,0,0], //x
-    matchWonBowledFirst: [0,0,0,0,0,0,0,0,0], //x
+  topBowler[player] = {
+    name : player,
+    id : z,
+    totalScore : sumArray(players[player].totalScore),
+    ballPlayed : sumArray(players[player].ballPlayed),
+    maxScore: Math.max(...players[player].maxScore),
+    total6s: sumArray(players[player].total6s),
+    total4s : sumArray(players[player].total4s),
+    matchPlayed: sumArray(players[player].matchPlayed),
+    nonStrikerRun: sumArray(players[player].nonStrikerRun),
+    wickets: sumArray(players[player].wickets),
+    ballThrown: sumArray(players[player].ballThrown),
+    totalRunGiven: sumArray(players[player].totalRunGiven),
   };
-  matchWonTossWon[team] = 0;
-  tossWon[team] = 0;
 
-  matchWonBatFirst[team] = 0;
-  batFirst[team] = 0;
-
-  matchWonBowledFirst[team] = 0;
-  ballFirst[team] = 0;
 });
 
 
+const y = JSON.stringify(topBowler);
 
-for(let i=0; i<match.length; i++){
+console.log(topBowler["A Mishra"]);
 
-  const mat  = match[i];
-  const base = seasonByMatchid(mat.matchId);
-  // console.log(mat.team1Score.name,mat.team2Score.name);
-  teams[mat.team1Score.name].maxScore[base] = Math.max( mat.team1Score.value, teams[mat.team1Score.name].maxScore[base]);
-  teams[mat.team2Score.name].maxScore[base] = Math.max( mat.team2Score.value, teams[mat.team2Score.name].maxScore[base]);
-
-  teams[mat.team1Score.name].totalScore[base] += mat.team1Score.value;
-  teams[mat.team2Score.name].totalScore[base] += mat.team2Score.value;
-
-  teams[mat.team1Score.name].totalMatchPlayed[base] += 1;
-  teams[mat.team2Score.name].totalMatchPlayed[base] += 1;
-
-  teams[mat.team1Score.name].matchWon[base] += mat.team1Score.name === mat.winner ? 1 : 0;
-  teams[mat.team2Score.name].matchWon[base] += mat.team2Score.name === mat.winner ? 1 : 0;
-
-  teams[mat.team1Score.name].total6s4s[base] += mat.team1Score.total6s + mat.team1Score.total4s;
-  teams[mat.team2Score.name].total6s4s[base] += mat.team2Score.total6s + mat.team2Score.total4s;
-
-
-  matchWonTossWon[mat.winner] += mat.winner === mat.tossWinner ? 1 : 0;
-  tossWon[mat.tossWinner]++;
-
-  matchWonBatFirst[mat.winner] += mat.winner === mat.batFirst ? 1 : 0;
-  batFirst[mat.batFirst]++;
-
-  matchWonBowledFirst[mat.winner] += mat.winner === mat.ballFirst ? 1 : 0;
-  ballFirst[mat.ballFirst]++;
-
-  if(base !== seasonByMatchid((mat.matchId + 1))){
-
-    /** resetting **/
-    teamList.forEach(function (team) {
-
-      /** toss won **/
-      teams[team].matchWonTossWonPercentage[base] = (matchWonTossWon[team]*100/tossWon[team]).toFixed(2);
-
-
-      /** bat won **/
-      teams[team].matchWonBatFirst[base] = (matchWonBatFirst[team]*100/batFirst[team]).toFixed(2);
-
-
-      /** ball won **/
-      teams[team].matchWonBowledFirst[base] = (matchWonBowledFirst[team]*100/ballFirst[team]).toFixed(2);
-
-      matchWonTossWon[team] = 0;
-      tossWon[team] = 0;
-
-      matchWonBatFirst[team] = 0;
-      batFirst[team] = 0;
-
-      matchWonBowledFirst[team] = 0;
-      ballFirst[team] = 0;
-    });
-
-  }
-}
-
-
-const teamJson = JSON.stringify(teams);
-fs.writeFile('teams.json', teamJson, 'utf8', function () {
-   console.log('teamJson written');
+fs.writeFile('topBowler.json', y, 'utf8', function () {
+  console.log('topBowler written');
 });
-
-
-
-
