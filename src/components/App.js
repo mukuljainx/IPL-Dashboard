@@ -7,27 +7,22 @@ import Menu from './Menu';
 
 import Home from './Home';
 import About from './About';
-import Season from './Season';
 import Players from './Players';
-
 
 
 class App extends React.Component {
   render() {
     return (
-      <BrowserRouter>
-        <div>
-          <div className="collapse expanded row">
-            <div className="columns shrink hide-for-small-only">
-              <Menu/>
-            </div>
-            <div className="columns ">
-              <Header/>
-              <Route exact path="/" component={Home} />
-              <Route path="/players" component={Players} />
-              <Route path="/about" component={About} />
-              <Route path="/season" component={Season} />
-            </div>
+      <BrowserRouter basename="/demo/ipl-dashboard">
+        <div className="collapse expanded row">
+          <div className="columns shrink hide-for-small-only">
+            <Menu/>
+          </div>
+          <div className="columns ">
+            <Header/>
+            <Route exact path="/" component={Home}/>
+            <Route path="/players" component={Players}/>
+            <Route path="/about" component={About}/>
           </div>
         </div>
       </BrowserRouter>

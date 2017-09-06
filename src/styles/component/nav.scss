@@ -8,4 +8,31 @@
     margin-left: 25px;
     margin-bottom: 0px;
   }
+
+  img{
+    margin-right: 10px;
+    width: 36px;
+  }
+}
+
+.menu-mobile-wrapper{
+  position: fixed;
+  width: 160px;
+  height: 100%;
+  top:0px;
+  right: -160px;
+  z-index: 1;
+  h2{margin-left: 0px}
+
+}
+
+.in-out-animations{
+  right: -160px;
+  transform: translate(-160px, 0px);
+  -ms-transform: translate(-160px, 0px);
+  -webkit-transform: translate(-160px, 0px);
+  -webkit-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+  transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
 }

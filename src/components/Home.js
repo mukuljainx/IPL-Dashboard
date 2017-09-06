@@ -1,7 +1,7 @@
 import  React from 'react';
 
 import GraphBundle from './GraphBundle'
-
+import Loader from './Loader';
 
 import * as api from '../helper/api';
 
@@ -41,7 +41,8 @@ class Home extends React.Component {
       <section>
         { this.state.ready &&
         <GraphBundle objectsList={this.state.teamList} objects={this.state.teams} graphModeNames={this.graphModeNames} switchName="Player"
-                     graphAlert="Please remove a Team to add another" dataFunctionKey="getTeamData"/>}
+                     graphAlert="Please remove a Team to add another" dataFunctionKey="getTeamData" searchPlaceholder="Search Teams"/>}
+        {!this.state.ready && <Loader />}
       </section>
     );
   }

@@ -1,4 +1,7 @@
+/*eslint import/namespace: ['error', { allowComputed: true }]*/
 import  React from 'react';
+import PropTypes from 'prop-types';
+
 import {LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer} from 'recharts';
 
 
@@ -136,10 +139,10 @@ class GraphBundle extends React.Component {
           </div>
         </div>
         <div className="row">
-          <div className="columns small-12 medium-12 large-8">
+          <div className="columns small-11 medium-12 large-8">
             <div className="graph-box">
 
-              <ResponsiveContainer height={350}>
+              <ResponsiveContainer height={355}>
                 <LineChart data={data}>
                   <XAxis dataKey="label"/>
                   <YAxis/>
@@ -163,7 +166,7 @@ class GraphBundle extends React.Component {
           <div className={"columns small-12 large-4 " + this.state.graphModeClass}>
             <GraphOption onClickHandler={this.onGraphOptionClick} colors={graphColorsCurrent} mode="multi"
                          options={this.state.graphOptions} optionsNames={optionsNames} colorCoded={true} height={350}
-                         searchEnabled={true} optionsNamesObject={objects}/>
+                         searchEnabled={true} searchPlaceholder={this.props.searchPlaceholder} optionsNamesObject={objects}/>
           </div>
 
           <div className={"columns small-12 " + this.state.graphOptionsClass}>
@@ -177,5 +180,16 @@ class GraphBundle extends React.Component {
     );
   }
 }
+
+GraphBundle.propTypes = {
+  objectsList : PropTypes.array,
+  objects : PropTypes.object,
+  graphModeNames : PropTypes.array,
+  switchName : PropTypes.string,
+  graphAlert : PropTypes.string,
+  dataFunctionKey : PropTypes.string,
+  searchPlaceholder : PropTypes.string
+
+};
 
 export default GraphBundle;

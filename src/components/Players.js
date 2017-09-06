@@ -26,14 +26,13 @@ class Players extends React.Component {
     const players = await api.apiCall("/data/players.json");
     const playerList = await api.apiCall("/data/playersList.json");
 
-    setTimeout(()=>{
-      this.setState({
-        players,
-        playerList,
-        ready: true
-      });
-    },3000);
-
+    // setTimeout(()=>{
+    this.setState({
+      players,
+      playerList,
+      ready: true
+    });
+    // },3000);
 
 
   }
@@ -41,11 +40,11 @@ class Players extends React.Component {
   render() {
 
     return (
-      <section style={{position : "relative"}}>
+      <section style={{position: "relative"}}>
         {this.state.ready && <GraphBundle objectsList={this.state.playerList} objects={this.state.players}
                                           graphModeNames={this.graphModeNames} switchName="Teams"
                                           graphAlert="Please remove a player to add another"
-                                          dataFunctionKey="getPlayerData"/>}
+                                          dataFunctionKey="getPlayerData" searchPlaceholder="Search Players"/>}
         {!this.state.ready && <Loader />}
       </section>
     );

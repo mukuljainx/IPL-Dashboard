@@ -1,7 +1,7 @@
 import  React from 'react';
-import PropTypes from 'prop-types';
 
-const CustomDot = ({cx, cy, stroke, payload, value, onClickHandler}) => {
+
+const CustomDot = ({cx, cy, stroke, payload, onClickHandler}) => {
 
   if(isNaN(cy)) cy = -100;
   return (

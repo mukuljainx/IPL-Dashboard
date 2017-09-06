@@ -57,10 +57,16 @@ button:hover {
   cursor: pointer;
 }
 
+[type='text']{
+  background-color: #2A2A32;
+  color: white;
+  border: 1px solid white;
+}
+
 [type='text']:focus, [type='password']:focus, [type='date']:focus, [type='datetime']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='week']:focus, [type='email']:focus, [type='number']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='url']:focus, [type='color']:focus, textarea:focus {
   outline: none;
-  border: none;
-  background-color: white;
+  border: 1px solid white;
+  background-color: #2A2A32;
   box-shadow: none;
   -webkit-transition: none;
   transition: none;

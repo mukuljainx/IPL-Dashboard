@@ -107,7 +107,7 @@ class GraphOption extends React.Component {
           <div className={"columns graph-option-searchbox small-12"}>
             <input value={this.state.searchValue} onChange={
               this.searchOnChange
-            } type="text" placeholder="Search"/>
+            } type="text" placeholder={this.props.searchPlaceholder}/>
           </div>
           }
           {graphOptions}
@@ -128,6 +128,7 @@ GraphOption.propTypes = {
   optionClassName: PropTypes.string,
   searchEnabled: PropTypes.bool,
   optionsNamesObject: PropTypes.object,
+  searchPlaceholder : PropTypes.string,
 };
 
 GraphOption.defaultProps = {

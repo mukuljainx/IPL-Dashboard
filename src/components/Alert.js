@@ -60,6 +60,7 @@ class Alert extends React.Component {
 
 Alert.PropTypes = {
   alert: PropTypes.string.isRequired,
+  onRef : PropTypes.string,
 };
 
 export default Alert;
