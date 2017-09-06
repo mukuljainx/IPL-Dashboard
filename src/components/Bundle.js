@@ -1,6 +1,7 @@
 import  React from 'react';
 import {LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer} from 'recharts';
 
+
 import GraphOption from './GraphOption';
 import CustomTooltip from './CustomTooltip';
 import CustomDot from './CustomDot';
@@ -9,21 +10,15 @@ import Alert from './Alert';
 import * as helper from '../helper/dataCreator';
 
 
-import teamList from "../data/teamList.json";
-import teams from "../data/teams.json";
-
-
 const graphColors = ["#3FAEFF"];
 
 let graphColorsMulti = ["#008080", "#808080	", "#ffd8b1", "purple", "blue", "#FFFFFF", "#FF00FF", "#FF0000", "#FFFF40", "#FF7C14", "#8884d8"];
 let graphColorsCurrent = {x0: "#82ca9d", x1: "#3FAEFF"};
 
-const optionsNames = teamList;
-const graphModeNames = ["Average Score", "Max Score", "Total 6s & 4s", "Match Won", "Match Won %", "Match Won if Toss Won %", "Match Won if Bat first %", "Match Won if Ball first %"];
-
 const smallDevicehideClass = "hide-for-medium-only hide-for-small-only";
 
-class Home extends React.Component {
+
+class Players extends React.Component {
 
   constructor(props) {
     super(props);
@@ -44,6 +39,8 @@ class Home extends React.Component {
   }
 
   getGraphLine(keys, colors) {
+    //we will use push, pop method for colors
+    // graphColorsMulti.push(graphColorsCurrent.pop());
     const customDotOnClick = this.customDotOnClick;
     const graphOptions = this.state.graphOptions;
     return keys.map(function (key, i) {
@@ -61,6 +58,7 @@ class Home extends React.Component {
   }
 
   onGraphOptionClick(option) {
+
     this.setState((prevState) => {
       let graphOptions = prevState.graphOptions;
       const index = graphOptions.indexOf(option);
@@ -76,6 +74,7 @@ class Home extends React.Component {
         return {
           graphOptions
         };
+
       } else {
         //put the color back
         graphColorsMulti.push(graphColorsCurrent["x" + option]);
@@ -84,12 +83,11 @@ class Home extends React.Component {
 
         graphOptions.splice(index, 1);
         return {
-          graphOptions
+          graphOptions,
         };
       }
     });
   }
-
 
   onGraphModeClick(option) {
     this.setState({
@@ -108,13 +106,19 @@ class Home extends React.Component {
 
 
   render() {
-    let teamNames = [];
+    const objectsList = this.props.objectsList;
+    const objects = this.props.objects;
+    const graphModeNames = this.props.graphModeNames;
+
+    const optionsNames = objectsList;
+
+    let playerNames = [];
     this.state.graphOptions.forEach(function (options) {
-      teamNames.push(teamList[options]);
+      playerNames.push(objectsList[options]);
     });
-    const teamData = helper.getTeamData(teams, teamNames, this.state.graphMode);
-    const data = teamData.graphData;
-    const graphKeys = teamData.graphKeys;
+    const playerData = helper.getPlayerData(objects, playerNames, this.state.graphMode);
+    const data = playerData.graphData;
+    const graphKeys = playerData.graphKeys;
 
 
     const graphLines = this.getGraphLine(graphKeys, graphColorsCurrent);
@@ -160,15 +164,14 @@ class Home extends React.Component {
           <div className={"columns small-12 large-4 " + this.state.graphModeClass}>
             <GraphOption onClickHandler={this.onGraphOptionClick} colors={graphColorsCurrent} mode="multi"
                          options={this.state.graphOptions} optionsNames={optionsNames} colorCoded={true} height={350}
-                         searchEnabled={true} optionsNamesObject={teams}/>
+                         searchEnabled={true} optionsNamesObject={objects}/>
           </div>
 
           <div className={"columns small-12 " + this.state.graphOptionsClass}>
             <GraphOption optionClassName="small-12 medium-6 large-3" onClickHandler={this.onGraphModeClick}
-                         colors={graphColors} mode="single"
-                         options={this.state.graphMode} optionsNames={graphModeNames}/>
+                         colors={graphColors} mode="single" options={this.state.graphMode}
+                         optionsNames={graphModeNames}/>
           </div>
-
 
         </div>
       </section>
@@ -176,4 +179,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default Players;

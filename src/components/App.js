@@ -9,7 +9,12 @@ import Home from './Home';
 import About from './About';
 import Season from './Season';
 import Players from './Players';
+import Bundle from './Bundle';
 
+import playerList from '../data/playersList.json';
+import players from '../data/players.json';
+
+const playerGraphModeNames = ["Total Score", "Max Score", "Strike Rate", "Total 6s", "Total 4s", "Match Played", "Run When Non Striker", "Wickets", "Economy Rate", "Average Ball/Wicket"];
 
 class App extends React.Component {
   render() {
@@ -22,10 +27,11 @@ class App extends React.Component {
             </div>
             <div className="columns ">
               <Header/>
-              <Route exact path="/" component={Home} />
-              <Route path="/players" component={Players} />
-              <Route path="/about" component={About} />
-              <Route path="/season" component={Season} />
+              <Bundle objectsList={playerList} objects={players} graphModeNames={playerGraphModeNames}/>
+              {/*<Route exact path="/" component={Home} />*/}
+              {/*<Route path="/players" component={Players} />*/}
+              {/*<Route path="/about" component={About} />*/}
+              {/*<Route path="/season" component={Season} />*/}
             </div>
           </div>
         </div>
