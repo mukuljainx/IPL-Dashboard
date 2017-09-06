@@ -6,53 +6,54 @@ const Highlights = () => {
     <section className="row">
       <div className="columns medium-12 highlight-wrapper">
         <div className="row">
-          <div className="columns small-12 medium-3 text-center">
+          <div className="columns small-12 medium-6 large-3 text-center">
             <div className="highlight-card">
-              <h2>44532</h2>
-              <h3>Total Score</h3>
+              <h2>175528</h2>
+              <h3>Total Run</h3>
             </div>
           </div>
-          <div className="columns small-12 medium-3 text-center">
+          <div className="columns small-12 medium-6 large-3 text-center">
             <div className="highlight-card">
-              <h2>44532</h2>
-              <h3>Total Score</h3>
+              <h2>6727</h2>
+              <h3>Total Wickets</h3>
             </div>
           </div>
-          <div className="columns small-12 medium-3 text-center">
+          <div className="columns small-12 medium-6 large-3 text-center">
             <div className="highlight-card">
-              <h2>44532</h2>
-              <h3>Total Score</h3>
-            </div>
-          </div><div className="columns small-12 medium-3 text-center">
-          <div className="highlight-card">
-            <h2>44532</h2>
-            <h3>Total Score</h3>
-          </div>
-        </div><div className="columns small-12 medium-3 text-center">
-          <div className="highlight-card">
-            <h2>44532</h2>
-            <h3>Total Score</h3>
-          </div>
-        </div><div className="columns small-12 medium-3 text-center">
-          <div className="highlight-card">
-            <h2>44532</h2>
-            <h3>Total Score</h3>
-          </div>
-        </div><div className="columns small-12 medium-3 text-center">
-          <div className="highlight-card">
-            <h2>44532</h2>
-            <h3>Total Score</h3>
-          </div>
-        </div>
-          <div className="columns small-12 medium-3 text-center">
-            <div className="highlight-card">
-              <h2>44532</h2>
-              <h3>Total Score</h3>
+              <h2>151.86 (Ab Villiers)</h2>
+              <h3>Max Strike Rate</h3>
             </div>
           </div>
-
-
-
+          <div className="columns small-12 medium-6 large-3 text-center">
+            <div className="highlight-card">
+              <h2>175 (CH Gayle)</h2>
+              <h3>Max Player Run</h3>
+            </div>
+          </div>
+          <div className="columns small-12 medium-6 large-3 text-center">
+            <div className="highlight-card">
+              <h2>6/14 (Sohail Tanvir)</h2>
+              <h3>Best bowling perf.</h3>
+            </div>
+          </div>
+          <div className="columns small-12 medium-6 large-3 text-center">
+            <div className="highlight-card">
+              <h2>263 (RCB)</h2>
+              <h3>Max Team Score</h3>
+            </div>
+          </div>
+          <div className="columns small-12 medium-6 large-3 text-center">
+            <div className="highlight-card">
+              <h2>5817</h2>
+              <h3>Total 6s</h3>
+            </div>
+          </div>
+          <div className="columns small-12 medium-6 large-3 text-center">
+            <div className="highlight-card">
+              <h2>15421</h2>
+              <h3>Total 4s</h3>
+            </div>
+          </div>
 
 
         </div>
@@ -63,4 +64,3 @@ const Highlights = () => {
 
 export default Highlights;
 
-// ["SL Malinga","A Mishra","Harbhajan Singh", "PP Chawla","DJ Bravo", "B Kumar", "A Nehra", "R Vinay Kumar", "Z Khan", "R Ashwin"]

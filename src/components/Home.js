@@ -3,8 +3,10 @@ import  React from 'react';
 import GraphBundle from './GraphBundle';
 import Loader from './Loader';
 import Highlights from './Highlights';
+import TopPlayer from './TopPlayer';
 
 import * as api from '../helper/api';
+
 
 class Home extends React.Component {
 
@@ -14,8 +16,12 @@ class Home extends React.Component {
     this.state = {
       teamList: [],
       teams: {},
-      ready: false,
-      activeTab: 0
+      graphReady: false,
+      activeTab: 0,
+      topBatsman: [],
+      batsmanReady: false,
+      topBowler: [],
+      bowlerReady: false,
     };
 
   }
@@ -33,16 +39,32 @@ class Home extends React.Component {
     this.setState({
       teams,
       teamList,
-      ready: true
+      graphReady: true
     });
 
     this.activateTab = this.activateTab.bind(this);
   }
 
-  activateTab(id) {
+  async activateTab(id) {
     this.setState({
-      activeTab: id
+      activeTab: id,
     });
+
+    if (id === 1 && !this.state.batsmanReady) {
+      const batsman = await api.apiCall("/data/topBatsman.json");
+      this.setState({
+        topBatsman: batsman,
+        batsmanReady: true
+      });
+    }
+
+    if (id === 2 && !this.state.bowlerReady) {
+      const bowler = await api.apiCall("/data/topBowler.json");
+      this.setState({
+        topBowler: bowler,
+        bowlerReady: true
+      });
+    }
   }
 
 
@@ -62,25 +84,25 @@ class Home extends React.Component {
           <div className="columns medium-12 tabs-wrapper">
             <ul className="tabs" id="example-tabs">
               <li onClick={() => {
-                this.activateTab(0)
+                this.activateTab(0);
               }} className={"tabs-title " + (this.state.activeTab === 0 ? "is-active" : "") }><a>Team Comparison</a>
               </li>
               <li onClick={() => {
-                this.activateTab(1)
+                this.activateTab(1);
               }} className={"tabs-title " + (this.state.activeTab === 1 ? "is-active" : "") }><a >Top 10 Batsman</a>
               </li>
               <li onClick={() => {
-                this.activateTab(2)
+                this.activateTab(2);
               }} className={"tabs-title " + (this.state.activeTab === 2 ? "is-active" : "") }><a >Top 10 Bowler</a>
               </li>
               <li onClick={() => {
-                this.activateTab(3)
+                this.activateTab(3);
               }} className={"tabs-title " + (this.state.activeTab === 3 ? "is-active" : "") }><a >Highlights</a></li>
             </ul>
           </div>
         </div>
 
-        { this.state.activeTab === 0 && ( this.state.ready ?
+        { this.state.activeTab === 0 && ( this.state.graphReady ?
           <GraphBundle objectsList={this.state.teamList} objects={this.state.teams} graphModeNames={this.graphModeNames}
                        graphColorsMulti={this.graphColorsMulti}
                        graphColorsCurrent={this.graphColorsCurrent}
@@ -88,14 +110,16 @@ class Home extends React.Component {
                        graphAlert="Please remove a Team to add another" dataFunctionKey="getTeamData"
                        searchPlaceholder="Search Teams"/> : <Loader />)}
 
-        {this.state.activeTab === 1 &&
-        <p>lol 1</p>
-        }
-        {this.state.activeTab === 2 &&
-        <p>lol 2</p>
-        }
+        { this.state.activeTab === 1 && ( this.state.batsmanReady ?
+            <TopPlayer players={this.state.topBatsman}/> : <Loader/>
+        )}
+
+        { this.state.activeTab === 2 && ( this.state.bowlerReady ?
+            <TopPlayer players={this.state.topBowler}/> : <Loader/>
+        )}
+
         {this.state.activeTab === 3 &&
-          <Highlights />
+        <Highlights />
         }
 
       </section>

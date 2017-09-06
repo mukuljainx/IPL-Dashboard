@@ -733,44 +733,13 @@ function sumArray(A) {
 
 
 
-// const topBat = ["SK Raina","V Kohli","R Sharma","G Gambhir","DA Warner","RV Uthappa","CH Gayle","S Dhawan","MS Dhoni","AB de Villiers"];
-// let topBatsman = {};
-//
-// topBat.forEach(function (player) {
-//
-//   topBatsman[player] = {
-//     name : player,
-//     id : z,
-//     totalScore : sumArray(players[player].totalScore),
-//     ballPlayed : sumArray(players[player].ballPlayed),
-//     maxScore: Math.max(...players[player].maxScore),
-//     total6s: sumArray(players[player].total6s),
-//     total4s : sumArray(players[player].total4s),
-//     matchPlayed: sumArray(players[player].matchPlayed),
-//     nonStrikerRun: sumArray(players[player].nonStrikerRun),
-//     wickets: sumArray(players[player].wickets),
-//     ballThrown: sumArray(players[player].ballThrown),
-//     totalRunGiven: sumArray(players[player].totalRunGiven),
-//   };
-//
-// });
-//
-// const x = JSON.stringify(topBatsman);
-//
-// // console.log(topBatsman["V Kohli"]);
-//
-// fs.writeFile('topBatsman.json', x, 'utf8', function () {
-//    console.log('topBatsman written');
-// });
+const topBat = ["SK Raina","V Kohli","R Sharma","G Gambhir","DA Warner","RV Uthappa","CH Gayle","S Dhawan","MS Dhoni","AB de Villiers"];
+let topBatsman = [];
 
-const topBol = ["SL Malinga","A Mishra","Harbhajan Singh", "PP Chawla","DJ Bravo", "B Kumar", "A Nehra", "R Vinay Kumar", "Z Khan", "R Ashwin"];
-let topBowler = {};
+topBat.forEach(function (player) {
 
-topBol.forEach(function (player) {
-
-  topBowler[player] = {
+  topBatsman.push({
     name : player,
-    id : z,
     totalScore : sumArray(players[player].totalScore),
     ballPlayed : sumArray(players[player].ballPlayed),
     maxScore: Math.max(...players[player].maxScore),
@@ -781,14 +750,43 @@ topBol.forEach(function (player) {
     wickets: sumArray(players[player].wickets),
     ballThrown: sumArray(players[player].ballThrown),
     totalRunGiven: sumArray(players[player].totalRunGiven),
-  };
+  });
+
+});
+
+const x = JSON.stringify(topBatsman);
+
+console.log(topBatsman[0]);
+
+fs.writeFile('topBatsman.json', x, 'utf8', function () {
+   console.log('topBatsman written');
+});
+
+const topBol = ["SL Malinga","A Mishra","Harbhajan Singh", "PP Chawla","DJ Bravo", "B Kumar", "A Nehra", "R Vinay Kumar", "Z Khan", "R Ashwin"];
+let topBowler = [];
+
+topBol.forEach(function (player) {
+
+  topBowler.push({
+    name : player,
+    totalScore : sumArray(players[player].totalScore),
+    ballPlayed : sumArray(players[player].ballPlayed),
+    maxScore: Math.max(...players[player].maxScore),
+    total6s: sumArray(players[player].total6s),
+    total4s : sumArray(players[player].total4s),
+    matchPlayed: sumArray(players[player].matchPlayed),
+    nonStrikerRun: sumArray(players[player].nonStrikerRun),
+    wickets: sumArray(players[player].wickets),
+    ballThrown: sumArray(players[player].ballThrown),
+    totalRunGiven: sumArray(players[player].totalRunGiven),
+  });
 
 });
 
 
 const y = JSON.stringify(topBowler);
 
-console.log(topBowler["A Mishra"]);
+console.log(topBowler[0]);
 
 fs.writeFile('topBowler.json', y, 'utf8', function () {
   console.log('topBowler written');
