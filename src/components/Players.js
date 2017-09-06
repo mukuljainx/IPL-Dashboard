@@ -1,7 +1,7 @@
 import  React from 'react';
 
 import GraphBundle from './GraphBundle';
-
+import Loader from './Loader';
 
 import * as api from '../helper/api';
 
@@ -41,12 +41,12 @@ class Players extends React.Component {
   render() {
 
     return (
-      <section>
+      <section style={{position : "relative"}}>
         {this.state.ready && <GraphBundle objectsList={this.state.playerList} objects={this.state.players}
                                           graphModeNames={this.graphModeNames} switchName="Teams"
                                           graphAlert="Please remove a player to add another"
                                           dataFunctionKey="getPlayerData"/>}
-        {!this.state.ready && <p>Loader</p>}
+        {!this.state.ready && <Loader />}
       </section>
     );
   }
