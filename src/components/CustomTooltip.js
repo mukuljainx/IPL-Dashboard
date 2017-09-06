@@ -37,14 +37,12 @@ const CustomTooltip = ({ payload, label, data, options, optionsNames, dataType, 
     <section className="custom-graph-tooltip">
       <div className="row">
         <div className="columns small-12">
-          {dataType === "season" &&
           <span><b>Year:</b> {label}</span>
-          }
           <br />
-          {dataType === "season" &&<span><b>Season Winner:</b>
-            {data[(label - base)]["winner"]}
+          {dataType === "Teams" &&<span><b>Season Winner:</b>
+            {data[(label - base)]["winner"]}<br />
             </span>
-          } <br />
+          }
         </div>
       </div>
       {tooltipContent}

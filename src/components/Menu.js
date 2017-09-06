@@ -9,7 +9,7 @@ const Menu = () => {
         <div className="columns medium-12">
           <div className="row align-middle logo">
             <div className="columns">
-              <h3><img src={require("../media/humburger.svg")}/> Menu</h3>
+              <h3><img src={require("../media/humburger.svg")}/>IPL Dashboard</h3>
             </div>
           </div>
           <ul className="vertical menu">

@@ -4,6 +4,7 @@ import GraphBundle from './GraphBundle';
 import Loader from './Loader';
 import Highlights from './Highlights';
 import TopPlayer from './TopPlayer';
+import Header from './Header';
 
 import * as api from '../helper/api';
 
@@ -72,14 +73,7 @@ class Home extends React.Component {
 
     return (
       <section>
-        <div className="row">
-          <div className="columns small-12">
-            <div className="overview">
-              <h3>IPL Overview</h3>
-            </div>
-          </div>
-        </div>
-
+        <Header heading="Overview"/>
         <div className="row">
           <div className="columns medium-12 tabs-wrapper">
             <ul className="tabs" id="example-tabs">

@@ -34,7 +34,7 @@ class TopPlayer extends React.Component {
     const tableRows = this.getTableRows();
     return (
       <div className="row">
-        <div className="columns small-12">
+        <div className="columns small-12 player-table-wrapper">
           <table className="player-table">
             <thead>
             <tr>

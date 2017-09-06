@@ -1,7 +1,6 @@
 import  React from 'react';
 import {BrowserRouter, Route} from "react-router-dom";
 
-import Header from './Header';
 import Menu from './Menu';
 
 
@@ -11,6 +10,7 @@ import Players from './Players';
 
 
 class App extends React.Component {
+
   render() {
     return (
       <BrowserRouter basename="/demo/ipl-dashboard">
@@ -19,7 +19,6 @@ class App extends React.Component {
             <Menu/>
           </div>
           <div className="columns ">
-            <Header/>
             <Route exact path="/" component={Home}/>
             <Route path="/players" component={Players}/>
             <Route path="/about" component={About}/>

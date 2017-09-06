@@ -15,7 +15,6 @@ class Header extends React.Component {
   }
 
   showMobileMenu() {
-    // debugger;
     this.setState({mobileMenuClass: "in-out-animations"});
   }
 
@@ -28,7 +27,7 @@ class Header extends React.Component {
     return (
       <div className="row align-middle expanded nav-wrapper">
         <div className="columns">
-          <h2 className="align-left">IPL Dashboard</h2>
+          <h2 className="align-left">{this.props.heading}</h2>
         </div>
         <div className="columns text-right show-for-small-only">
           <img onClick={this.showMobileMenu} src={require("../media/humburger.svg")}/>
@@ -52,6 +51,7 @@ class Header extends React.Component {
     );
   }
 }
+
 
 
 export default Header;

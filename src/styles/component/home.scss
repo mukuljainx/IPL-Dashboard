@@ -28,29 +28,33 @@
   }
 }
 
+.player-table-wrapper {
+  overflow-x: scroll;
+  .player-table {
+    margin-top: 25px;
+    tr { min-width: 200px; }
+    tr, td {
+      color: white;
+      height: 50px;
+    }
 
-.player-table{
-  margin-top: 25px;
-  tr,th{
-    color: white;
-  }
+    thead {
+      background: black;
+      border: none;
+    }
 
-  thead {
-    background: black;
-    border: none;
-  }
+    tbody {
+      border: none;
+    }
 
-  tbody{
-    border: none;
-  }
+    tbody tr:nth-child(even) {
+      border-bottom: 0;
+      background-color: #2A2A32;
+    }
 
-  tbody tr:nth-child(even) {
-    border-bottom: 0;
-    background-color: #2A2A32;
-  }
-
-  tbody tr:nth-child(odd) {
-    border-bottom: 0;
-    background-color: #212025;
+    tbody tr:nth-child(odd) {
+      border-bottom: 0;
+      background-color: #212025;
+    }
   }
 }

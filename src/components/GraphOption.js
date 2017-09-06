@@ -85,7 +85,7 @@ class GraphOption extends React.Component {
 
 
   render() {
-    let {options, colors, onClickHandler, mode, colorCoded, height, optionClassName, searchEnabled, optionsNamesObject} = this.props;
+    let {options, colors, onClickHandler, mode, colorCoded, height, optionClassName, searchEnabled, optionsNamesObject, optionsNames, typeName} = this.props;
 
     const ModifiedOptionNames = colorCoded ? this.ModifyOptionNames(options) : this.state.optionsNames;
 
@@ -101,14 +101,24 @@ class GraphOption extends React.Component {
     }
 
     return (
-      <section className="user-option-wrapper">
-        <div className="row " style={style}>
-          {searchEnabled &&
-          <div className={"columns graph-option-searchbox small-12"}>
-            <input value={this.state.searchValue} onChange={
-              this.searchOnChange
-            } type="text" placeholder={this.props.searchPlaceholder}/>
+      <section className="user-option-wrapper" style={{paddingTop: mode==="single" ? "25px" : "50px"}}>
+        {mode === "single" &&
+        <div className="row">
+          <div className="columns small-12">
+            <h4>Filter By</h4>
           </div>
+        </div>}
+        <div className="row scroll " style={style} >
+          {searchEnabled &&
+          <section>
+            <div className={"columns graph-option-searchbox small-12"}>
+              <input value={this.state.searchValue} onChange={
+                this.searchOnChange
+              } type="text" placeholder={this.props.searchPlaceholder}/>
+              <p className="text-left">Total {typeName} participated: </p>
+              <p className="text-right">{optionsNames.length}</p>
+            </div>
+          </section>
           }
           {graphOptions}
         </div>
@@ -128,7 +138,7 @@ GraphOption.propTypes = {
   optionClassName: PropTypes.string,
   searchEnabled: PropTypes.bool,
   optionsNamesObject: PropTypes.object,
-  searchPlaceholder : PropTypes.string,
+  searchPlaceholder: PropTypes.string,
 };
 
 GraphOption.defaultProps = {

@@ -38,9 +38,6 @@ class GraphBundle extends React.Component {
 
   }
 
-  componentWillUnmount(){
-    console.log('lol');
-  }
 
 
   getGraphLine(keys, colors) {
@@ -132,7 +129,7 @@ class GraphBundle extends React.Component {
     return (
       <section className="home-wrapper">
 
-        <Alert onRef={ref => (this.alertBox = ref)} alert={this.props.graphAlert} />
+        <Alert onRef={ref => (this.alertBox = ref)} alert={this.props.graphAlert}/>
 
         <div className="row">
           <div className="columns small-11 medium-12 large-8">
@@ -143,7 +140,8 @@ class GraphBundle extends React.Component {
                   <XAxis dataKey="label"/>
                   <YAxis/>
                   <CartesianGrid strokeDasharray="5 0" stroke="#393840"/>
-                  <Tooltip content={<CustomTooltip data={data} options={this.state.graphOptions} dataType="season"
+                  <Tooltip content={<CustomTooltip data={data} options={this.state.graphOptions}
+                                                   dataType={this.props.switchName}
                                                    optionsNames={optionsNames} graphKeys={graphKeys}/>}/>
                   {graphLines}
                 </LineChart>
@@ -161,9 +159,11 @@ class GraphBundle extends React.Component {
 
           <div className={"columns small-12 large-4 " + this.state.graphModeClass}>
             <GraphOption onClickHandler={this.onGraphOptionClick} colors={this.props.graphColorsCurrent} mode="multi"
-                         options={this.state.graphOptions} optionsNames={optionsNames} colorCoded={true} height={350}
-                         searchEnabled={true} searchPlaceholder={this.props.searchPlaceholder} optionsNamesObject={objects}/>
+                         options={this.state.graphOptions} optionsNames={optionsNames} colorCoded={true} height={330}
+                         searchEnabled={true} searchPlaceholder={this.props.searchPlaceholder}
+                         optionsNamesObject={objects} typeName={this.props.switchName} />
           </div>
+
 
           <div className={"columns small-12 " + this.state.graphOptionsClass}>
             <GraphOption optionClassName="small-12 medium-6 large-3" onClickHandler={this.onGraphModeClick}
@@ -178,15 +178,15 @@ class GraphBundle extends React.Component {
 }
 
 GraphBundle.propTypes = {
-  objectsList : PropTypes.array,
-  objects : PropTypes.object,
-  graphModeNames : PropTypes.array,
-  switchName : PropTypes.string,
-  graphAlert : PropTypes.string,
-  dataFunctionKey : PropTypes.string,
-  searchPlaceholder : PropTypes.string,
+  objectsList: PropTypes.array,
+  objects: PropTypes.object,
+  graphModeNames: PropTypes.array,
+  switchName: PropTypes.string,
+  graphAlert: PropTypes.string,
+  dataFunctionKey: PropTypes.string,
+  searchPlaceholder: PropTypes.string,
   graphColorsMulti: PropTypes.array,
-  graphColorsCurrent:PropTypes.object
+  graphColorsCurrent: PropTypes.object
 
 };
 

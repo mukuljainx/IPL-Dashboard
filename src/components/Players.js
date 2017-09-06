@@ -2,6 +2,7 @@ import  React from 'react';
 
 import GraphBundle from './GraphBundle';
 import Loader from './Loader';
+import Header from './Header';
 
 import * as api from '../helper/api';
 
@@ -43,13 +44,8 @@ class Players extends React.Component {
 
     return (
       <section style={{position: "relative"}}>
-        <div className="row">
-          <div className="columns medium-12">
-            <div className="overview">
-              <h3>Players Overview</h3>
-            </div>
-          </div>
-        </div>
+        <Header heading="Player Overview"/>
+
         {this.state.ready && <GraphBundle objectsList={this.state.playerList} objects={this.state.players}
                                           graphModeNames={this.graphModeNames} switchName="Players"
                                           graphColorsMulti={this.graphColorsMulti}

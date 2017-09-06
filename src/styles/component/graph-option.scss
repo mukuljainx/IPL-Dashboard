@@ -1,7 +1,12 @@
-.user-option-wrapper{
-  padding-top: 29px;
+.user-option-wrapper {
+
+  h4{
+    padding-left: 10px;
+  }
+
+  padding-top: 50px;
   position: relative;
-  .graph-option{
+  .graph-option {
     background: #212025;
     padding: 15px 0px;
     margin-bottom: 10px;
@@ -9,7 +14,7 @@
     margin-left: 10px;
   }
 
-  .graph-option-disc{
+  .graph-option-disc {
     height: 10px;
     width: 10px;
     display: inline-block;
@@ -21,7 +26,16 @@
     vertical-align: middle;
   }
 
-  .graph-option-searchbox{
+  .graph-option-searchbox {
+    background: #2A2A32;
+    p {
+      margin-bottom: 0px;
+      display: inline-flex;
+    }
+    p:last-child{float: right}
+    input {
+      margin-bottom: 0px;
+    }
     padding-left: 25px;
     position: absolute;
     top: 29px;
@@ -30,9 +44,8 @@
   }
 }
 
-
-.criteria-button{
-  button{
+.criteria-button {
+  button {
     margin-left: 25px;
     margin-top: 25px;
     font-weight: $font-weight-medium;
