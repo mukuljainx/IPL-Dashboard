@@ -70,7 +70,6 @@ class GraphOption extends React.Component {
 
     let names = [];
     options.map(function (option) {
-      // debugger;
       const name = originalOptionNames[option];
       const index = optionsNames.indexOf(name);
       if (index !== -1) {

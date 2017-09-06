@@ -9,7 +9,6 @@ import Alert from './Alert';
 
 import * as helper from '../helper/dataCreator';
 
-
 const graphColors = ["#3FAEFF"];
 
 let graphColorsMulti = ["#008080", "#808080	", "#ffd8b1", "purple", "blue", "#FFFFFF", "#FF00FF", "#FF0000", "#FFFF40", "#FF7C14", "#8884d8"];
@@ -18,7 +17,7 @@ let graphColorsCurrent = {x0: "#82ca9d", x1: "#3FAEFF"};
 const smallDevicehideClass = "hide-for-medium-only hide-for-small-only";
 
 
-class Players extends React.Component {
+class GraphBundle extends React.Component {
 
   constructor(props) {
     super(props);
@@ -52,9 +51,9 @@ class Players extends React.Component {
     });
   }
 
-  customDotOnClick(data) {
-    const season = data.season;
-    this.props.history.push("/season/" + season);
+  customDotOnClick() {
+    // const season = data.season;
+    // this.props.history.push("/season/" + season);
   }
 
   onGraphOptionClick(option) {
@@ -116,7 +115,8 @@ class Players extends React.Component {
     this.state.graphOptions.forEach(function (options) {
       playerNames.push(objectsList[options]);
     });
-    const playerData = helper.getPlayerData(objects, playerNames, this.state.graphMode);
+
+    const playerData = helper[this.props.dataFunctionKey](objects, playerNames, this.state.graphMode);
     const data = playerData.graphData;
     const graphKeys = playerData.graphKeys;
 
@@ -126,7 +126,7 @@ class Players extends React.Component {
     return (
       <section className="home-wrapper">
 
-        <Alert onRef={ref => (this.alertBox = ref)} alert="Please remove a player to add another"/>
+        <Alert onRef={ref => (this.alertBox = ref)} alert={this.props.graphAlert} />
 
         <div className="row">
           <div className="columns medium-12">
@@ -144,7 +144,6 @@ class Players extends React.Component {
                   <XAxis dataKey="label"/>
                   <YAxis/>
                   <CartesianGrid strokeDasharray="5 0" stroke="#393840"/>
-                  {/*<Tooltip wrapperStyle={{background: "black", "border": "none"}}/>*/}
                   <Tooltip content={<CustomTooltip data={data} options={this.state.graphOptions} dataType="season"
                                                    optionsNames={optionsNames} graphKeys={graphKeys}/>}/>
                   {graphLines}
@@ -156,7 +155,7 @@ class Players extends React.Component {
 
           <div className="columns small-12 hide-for-large criteria-button">
             { this.state.graphModeClass === smallDevicehideClass &&
-            <button onClick={this.switchOptions}>Choose Player</button> }
+            <button onClick={this.switchOptions}>Choose {this.props.switchName}</button> }
             { this.state.graphOptionsClass === smallDevicehideClass &&
             <button onClick={this.switchOptions}>Choose Criteria</button> }
           </div>
@@ -179,4 +178,4 @@ class Players extends React.Component {
   }
 }
 
-export default Players;
+export default GraphBundle;
