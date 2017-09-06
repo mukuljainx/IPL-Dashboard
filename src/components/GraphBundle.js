@@ -14,8 +14,6 @@ import * as helper from '../helper/dataCreator';
 
 const graphColors = ["#3FAEFF"];
 
-let graphColorsMulti = ["#008080", "#808080	", "#ffd8b1", "purple", "blue", "#FFFFFF", "#FF00FF", "#FF0000", "#FFFF40", "#FF7C14", "#8884d8"];
-let graphColorsCurrent = {x0: "#82ca9d", x1: "#3FAEFF"};
 
 const smallDevicehideClass = "hide-for-medium-only hide-for-small-only";
 
@@ -39,6 +37,11 @@ class GraphBundle extends React.Component {
     this.switchOptions = this.switchOptions.bind(this);
 
   }
+
+  componentWillUnmount(){
+    console.log('lol');
+  }
+
 
   getGraphLine(keys, colors) {
     //we will use push, pop method for colors
@@ -71,7 +74,7 @@ class GraphBundle extends React.Component {
           return;
         }
 
-        graphColorsCurrent["x" + option] = graphColorsMulti.pop();
+        this.props.graphColorsCurrent["x" + option] = this.props.graphColorsMulti.pop();
         graphOptions.push(option);
         return {
           graphOptions
@@ -79,9 +82,9 @@ class GraphBundle extends React.Component {
 
       } else {
         //put the color back
-        graphColorsMulti.push(graphColorsCurrent["x" + option]);
+        this.props.graphColorsMulti.push(this.props.graphColorsCurrent["x" + option]);
         //then remove it
-        delete graphColorsCurrent["x" + option];
+        delete this.props.graphColorsCurrent["x" + option];
 
         graphOptions.splice(index, 1);
         return {
@@ -124,7 +127,7 @@ class GraphBundle extends React.Component {
     const graphKeys = playerData.graphKeys;
 
 
-    const graphLines = this.getGraphLine(graphKeys, graphColorsCurrent);
+    const graphLines = this.getGraphLine(graphKeys, this.props.graphColorsCurrent);
 
     return (
       <section className="home-wrapper">
@@ -164,7 +167,7 @@ class GraphBundle extends React.Component {
           </div>
 
           <div className={"columns small-12 large-4 " + this.state.graphModeClass}>
-            <GraphOption onClickHandler={this.onGraphOptionClick} colors={graphColorsCurrent} mode="multi"
+            <GraphOption onClickHandler={this.onGraphOptionClick} colors={this.props.graphColorsCurrent} mode="multi"
                          options={this.state.graphOptions} optionsNames={optionsNames} colorCoded={true} height={350}
                          searchEnabled={true} searchPlaceholder={this.props.searchPlaceholder} optionsNamesObject={objects}/>
           </div>
@@ -188,7 +191,9 @@ GraphBundle.propTypes = {
   switchName : PropTypes.string,
   graphAlert : PropTypes.string,
   dataFunctionKey : PropTypes.string,
-  searchPlaceholder : PropTypes.string
+  searchPlaceholder : PropTypes.string,
+  graphColorsMulti: PropTypes.array,
+  graphColorsCurrent:PropTypes.object
 
 };
 

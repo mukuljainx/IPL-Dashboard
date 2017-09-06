@@ -20,6 +20,8 @@ class Players extends React.Component {
 
   componentWillMount() {
     this.graphModeNames = ["Total Score", "Max Score", "Strike Rate", "Total 6s", "Total 4s", "Match Played", "Run When Non Striker", "Wickets", "Economy Rate", "Average Ball/Wicket"];
+    this.graphColorsMulti = ["#008080", "#808080	", "#ffd8b1", "purple", "blue", "#FFFFFF", "#FF00FF", "#FF0000", "#FFFF40", "#FF7C14", "#8884d8"];
+    this.graphColorsCurrent = {x0: "#82ca9d", x1: "#3FAEFF"};
   }
 
   async componentDidMount() {
@@ -43,6 +45,8 @@ class Players extends React.Component {
       <section style={{position: "relative"}}>
         {this.state.ready && <GraphBundle objectsList={this.state.playerList} objects={this.state.players}
                                           graphModeNames={this.graphModeNames} switchName="Teams"
+                                          graphColorsMulti={this.graphColorsMulti}
+                                          graphColorsCurrent={this.graphColorsCurrent}
                                           graphAlert="Please remove a player to add another"
                                           dataFunctionKey="getPlayerData" searchPlaceholder="Search Players"/>}
         {!this.state.ready && <Loader />}
