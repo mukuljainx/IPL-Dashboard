@@ -5,6 +5,7 @@ import {LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContain
 import GraphOption from './GraphOption';
 import CustomTooltip from './CustomTooltip';
 import CustomDot from './CustomDot';
+import Alert from './Alert';
 
 import * as helper from '../helper/dataCreator';
 
@@ -33,7 +34,7 @@ class Players extends React.Component {
       graphOptions: [0, 1],
       graphMode: [0],
       graphModeClass: "",
-      graphOptionsClass: smallDevicehideClass
+      graphOptionsClass: smallDevicehideClass,
     };
 
     this.customDotOnClick = this.customDotOnClick.bind(this);
@@ -64,15 +65,23 @@ class Players extends React.Component {
   }
 
   onGraphOptionClick(option) {
+
     this.setState((prevState) => {
       let graphOptions = prevState.graphOptions;
       const index = graphOptions.indexOf(option);
       if (index === -1) {
+
+        if (this.state.graphOptions.length >= 5) {
+          this.alertBox.showNotification();
+          return;
+        }
+
         graphColorsCurrent["x" + option] = graphColorsMulti.pop();
         graphOptions.push(option);
         return {
           graphOptions
         };
+
       } else {
         //put the color back
         graphColorsMulti.push(graphColorsCurrent["x" + option]);
@@ -81,7 +90,7 @@ class Players extends React.Component {
 
         graphOptions.splice(index, 1);
         return {
-          graphOptions
+          graphOptions,
         };
       }
     });
@@ -118,6 +127,9 @@ class Players extends React.Component {
 
     return (
       <section className="home-wrapper">
+
+        <Alert onRef={ref => (this.alertBox = ref)} alert="Please remove a player to add another"/>
+
         <div className="row">
           <div className="columns medium-12">
             <div className="overview">
@@ -154,13 +166,13 @@ class Players extends React.Component {
           <div className={"columns small-12 large-4 " + this.state.graphModeClass}>
             <GraphOption onClickHandler={this.onGraphOptionClick} colors={graphColorsCurrent} mode="multi"
                          options={this.state.graphOptions} optionsNames={optionsNames} colorCoded={true} height={350}
-                         searchEnabled={true} optionsNamesObject={players} />
+                         searchEnabled={true} optionsNamesObject={players}/>
           </div>
 
           <div className={"columns small-12 " + this.state.graphOptionsClass}>
             <GraphOption optionClassName="small-12 medium-6 large-3" onClickHandler={this.onGraphModeClick}
                          colors={graphColors} mode="single" options={this.state.graphMode}
-                         optionsNames={graphModeNames} />
+                         optionsNames={graphModeNames}/>
           </div>
 
         </div>
