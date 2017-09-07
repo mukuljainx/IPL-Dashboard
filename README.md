@@ -34,3 +34,11 @@ As the given [data](https://www.kaggle.com/manasgarg/ipl) can not be used direct
 ### Google Lighthouse report
 
 ![](https://github.com/mukuljainx/IPL-Dashboard/blob/master/lighthouse.png)
+
+
+### Issue
+
+1. Better view than table for top players
+2. Allow user to select from top players page, then jump to to comparison
+3. Selection always visible so user can quickly remove one and add another.
+4. **PWA** Cache the json response with some expiry data to app can work offline always.
